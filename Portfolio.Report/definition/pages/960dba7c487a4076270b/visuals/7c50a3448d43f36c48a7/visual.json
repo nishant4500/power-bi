@@ -1,0 +1,469 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7c50a3448d43f36c48a7",
+  "position": {
+    "x": 36.684977310723667,
+    "y": 363.18127537616431,
+    "z": 8000,
+    "height": 349.730117028899,
+    "width": 760.8464443515644,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "journal_rank"
+                }
+              },
+              "queryRef": "Sum(di_pub_citing_journal.journal_rank)",
+              "nativeQueryRef": "#",
+              "displayName": "#"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "journal_title"
+                }
+              },
+              "queryRef": "di_pub_citing_journal.journal_title",
+              "nativeQueryRef": "CITING JOURNAL",
+              "displayName": "CITING JOURNAL"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "total_citing_publications"
+                }
+              },
+              "queryRef": "Sum(di_pub_citing_journal.total_citing_publications)",
+              "nativeQueryRef": "CITING PUBS",
+              "displayName": "CITING PUBS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "avg_citing_citation"
+                }
+              },
+              "queryRef": "Sum(di_pub_citing_journal.avg_citing_citation)",
+              "nativeQueryRef": "AVG CIT",
+              "displayName": "AVG CIT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "pct_diff_from_global_avg"
+                }
+              },
+              "queryRef": "Sum(di_pub_citing_journal.pct_diff_from_global_avg)",
+              "nativeQueryRef": "VARIANCE",
+              "displayName": "VARIANCE"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "di_pub_citing_journal"
+                  }
+                },
+                "Property": "journal_rank"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#487F86'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#094780'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'foreground'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(di_pub_citing_journal.avg_citing_citation)"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "42.11965607833771D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(di_pub_citing_journal.journal_rank)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.09170668746569D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(di_pub_citing_journal.total_citing_publications)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "230.62245844065654D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(di_pub_citing_journal.avg_citing_citation)"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "df733cba6e3f1d76b6d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "journal_rank"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "di_pub_citing_journal",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "journal_rank"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "3L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "4L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "5L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "6L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "7L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "8L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "9L"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "10L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "fa81964908aa5b0caa2a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "journal_title"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f1056bf05fcbcd130703",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "total_citing_publications"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "97abd644940adc7d945d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "avg_citing_citation"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2fd6c7b0cd15688982aa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "pct_diff_from_global_avg"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

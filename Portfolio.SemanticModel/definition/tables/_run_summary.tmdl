@@ -1,0 +1,32 @@
+table _run_summary
+	lineageTag: a1fbba6c-24ab-4353-908e-f57d00354a54
+
+	column metric
+		dataType: string
+		lineageTag: 7d197afd-11b9-4c41-85c4-086a20e4d162
+		summarizeBy: none
+		sourceColumn: metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: string
+		lineageTag: 74e0f3ae-fa27-463d-8584-8e3f21d512a2
+		summarizeBy: none
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _run_summary = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    _run_summary_Sheet = Source{[Item="_run_summary",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(_run_summary_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"metric", type text}, {"value", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

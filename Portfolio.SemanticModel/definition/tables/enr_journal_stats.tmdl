@@ -1,0 +1,90 @@
+table enr_journal_stats
+	lineageTag: 5c6fed52-c31e-41d5-8466-4bbd45387cf3
+
+	column journal_id
+		dataType: string
+		lineageTag: 96db20ae-6afd-45e0-86af-26e21445ab2e
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: 4ef0af81-ebba-43f6-acb8-14b48c3b54fe
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_country
+		dataType: string
+		lineageTag: 89b0f6a9-fc12-4ba2-bb2d-edcd7dcecea0
+		summarizeBy: none
+		sourceColumn: publisher_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hra
+		dataType: string
+		lineageTag: e522a65a-4302-4d89-8a3b-1c05ab431de2
+		summarizeBy: none
+		sourceColumn: category_hra
+
+		annotation SummarizationSetBy = Automatic
+
+	column citations_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 477c73df-f547-49d7-a93d-ca84fdd904d2
+		summarizeBy: sum
+		sourceColumn: citations_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column paper_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f534427-9815-4d58-b877-55e7a5112798
+		summarizeBy: sum
+		sourceColumn: paper_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_avg_citation
+		dataType: string
+		lineageTag: 2ce9cfbe-6b1c-460d-a132-956c3e6e132a
+		summarizeBy: none
+		sourceColumn: journal_avg_citation
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_generalist
+		dataType: string
+		lineageTag: 58b61050-0351-4b82-af21-08a50dcb57d2
+		summarizeBy: none
+		sourceColumn: is_generalist
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 1ed370ab-e117-49ec-81fb-5d4e5d10d79a
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_journal_stats = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    enr_journal_stats_Sheet = Source{[Item="enr_journal_stats",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_journal_stats_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"journal_id", type text}, {"journal_title", type text}, {"publisher_country", type any}, {"category_hra", type any}, {"citations_total", Int64.Type}, {"paper_count", Int64.Type}, {"journal_avg_citation", type any}, {"is_generalist", type any}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,620 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1337.1097040610607,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 4567.9009514892759,
+            "y": 789.76659172744144
+          },
+          "nodeIndex": "_run_summary",
+          "nodeLineageTag": "a1fbba6c-24ab-4353-908e-f57d00354a54",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4851.9009514892759,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "di_citing_clinical_trial",
+          "nodeLineageTag": "d4da2ca1-2735-4c36-b1a6-d3271ea8801f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4062.6692868763917,
+            "y": 676.24660519521763
+          },
+          "nodeIndex": "di_citing_organization",
+          "nodeLineageTag": "fb30366f-2408-4cba-8e40-31603d62ac93",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1852.6984170526953,
+            "y": 719.72696651310582
+          },
+          "nodeIndex": "di_pub_citing_journal",
+          "nodeLineageTag": "e4dce11e-e9ac-4a9f-9dec-b91487d6b605",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5135.9009514892759,
+            "y": 765.76659172744144
+          },
+          "nodeIndex": "di_pub_citing_pub_link",
+          "nodeLineageTag": "41e00141-f09b-46b9-9fbe-f3d751bd5b27",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2138.7396567842084,
+            "y": 402.96047870187215
+          },
+          "nodeIndex": "di_pub_citing_publication",
+          "nodeLineageTag": "b4f210d2-ec1f-482a-920a-997d539f188e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3205.8773570342355,
+            "y": 843.11149317947252
+          },
+          "nodeIndex": "di_research_organization",
+          "nodeLineageTag": "b9158539-4bb2-4072-9b38-0ee0ad587e47",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1336.9201064612648,
+            "y": 686.48011462780914
+          },
+          "nodeIndex": "document_impact",
+          "nodeLineageTag": "2657b4f2-cff6-479b-97c0-8bce11ac62af",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5419.9009514892759,
+            "y": 777.76659172744144
+          },
+          "nodeIndex": "document_impact_clinical_trial",
+          "nodeLineageTag": "53337d5a-9b1e-41a3-8c76-7a7aced349a3",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2887.8166970516349,
+            "y": 797.44798586151444
+          },
+          "nodeIndex": "document_impact_funder",
+          "nodeLineageTag": "c334ce77-ec12-466c-9ece-e7b00c6f5b4e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 337.29625493610979,
+            "y": 380.06308277289577
+          },
+          "nodeIndex": "document_impact_geography",
+          "nodeLineageTag": "3982af0e-c36c-4282-b911-9502e60ec7f1",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 972.16513444231191,
+            "y": 1010.5759795168384
+          },
+          "nodeIndex": "document_impact_posts",
+          "nodeLineageTag": "242ed00b-6602-4064-949a-06ab0bdb1cc9",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5703.9009514892759,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "document_impact_researcher",
+          "nodeLineageTag": "a38bffec-5ee6-4817-b574-01c5caad2b79",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 816.3260494077399,
+            "y": 593.521116677719
+          },
+          "nodeIndex": "enr_altmetric",
+          "nodeLineageTag": "60374840-b138-4ee2-9ffa-530e4dc54a19",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1106.118131989846,
+            "y": 431.91997876949017
+          },
+          "nodeIndex": "enr_altmetric_geo",
+          "nodeLineageTag": "12f4ee33-eefe-4f32-9fb3-4dec26242f7f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 682.33893648356593,
+            "y": 1307.7336923039402
+          },
+          "nodeIndex": "enr_altmetric_post",
+          "nodeLineageTag": "aac26129-0f62-4c72-842d-aa7dbe8feed9",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 527.10731301163332,
+            "y": 631.05289640177466
+          },
+          "nodeIndex": "enr_altmetric_sentiment",
+          "nodeLineageTag": "e80212ea-6b43-4170-8a2d-bf56db330283",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5987.9009514892759,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "enr_citing_clinical_trial",
+          "nodeLineageTag": "4120ae13-808f-40f0-a5c3-ddf3a9cb1ee5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4169.1724055450723,
+            "y": 1029.4489581878765
+          },
+          "nodeIndex": "enr_citing_organization",
+          "nodeLineageTag": "97bfc878-2033-4a00-a6f6-98c474a5c26b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4333.9009514892759,
+            "y": 378.08422526700645
+          },
+          "nodeIndex": "enr_citing_organization_bridge",
+          "nodeLineageTag": "bc2af158-4e22-4c2b-a755-d4da90a528f5",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6271.9009514892759,
+            "y": 801.76659172744144
+          },
+          "nodeIndex": "enr_clinical_trial",
+          "nodeLineageTag": "de250fb8-c37f-4c83-ac4e-d0e4d54f8d27",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3492.8810317886164,
+            "y": 510.999473311281
+          },
+          "nodeIndex": "enr_funder",
+          "nodeLineageTag": "73086440-3a1f-4b8c-9902-c5bee4848b98",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2023.0648548875836,
+            "y": 1075.1040024516155
+          },
+          "nodeIndex": "enr_journal_stats",
+          "nodeLineageTag": "5c6fed52-c31e-41d5-8466-4bbd45387cf3",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6555.9009514892759,
+            "y": 777.76659172744144
+          },
+          "nodeIndex": "enr_pub_citing_pub_link",
+          "nodeLineageTag": "583ce336-250b-438f-a776-2ca8783c479e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3776.8810317886164,
+            "y": 804.76314244552259
+          },
+          "nodeIndex": "enr_pub_citing_pub_org",
+          "nodeLineageTag": "e309fc26-e04d-40d5-81cf-e42371f2927e",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2424.4454191930568,
+            "y": 695.65342932160115
+          },
+          "nodeIndex": "enr_pub_citing_publication",
+          "nodeLineageTag": "a7f5d882-a08f-4c4e-a3cc-015544c14ba9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1365.0449105149476,
+            "y": 1043.6528474651016
+          },
+          "nodeIndex": "enr_publication",
+          "nodeLineageTag": "2ea303c2-8d57-4e47-beb3-73d3e9454f95",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6839.9009514892759,
+            "y": 777.76659172744144
+          },
+          "nodeIndex": "enr_publication_clinical_trial",
+          "nodeLineageTag": "ee99ca77-8304-4d1a-834c-954e6a6a5bd2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2888.0315283270852,
+            "y": 442.65128172989921
+          },
+          "nodeIndex": "enr_research_organization",
+          "nodeLineageTag": "3861edc6-c08a-4b91-936e-89f76ab8f99e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7123.9009514892759,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "enr_researcher",
+          "nodeLineageTag": "c427dce9-9540-4285-8cea-b9fe16cc71b4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284.58399201301813,
+            "y": 27.701841862040055
+          },
+          "nodeIndex": "raw_altmetric",
+          "nodeLineageTag": "5cc3f94e-4c89-4581-8e70-210e38150b30",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7407.9009514892759,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "raw_citing_clinical_trial",
+          "nodeLineageTag": "be912135-9ea0-4cc7-8883-bf44bce81bdf",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7691.9009514892759,
+            "y": 777.76659172744144
+          },
+          "nodeIndex": "raw_clinical_trial",
+          "nodeLineageTag": "44abd9b4-22ae-4546-88bb-8eac176470f8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3492.7009963396204,
+            "y": 864.88190172498366
+          },
+          "nodeIndex": "raw_funder",
+          "nodeLineageTag": "8854ca80-3f6f-4a18-97b4-e3ebebc7edcd",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7975.9009514892759,
+            "y": 777.76659172744144
+          },
+          "nodeIndex": "raw_gsk_org_lookup",
+          "nodeLineageTag": "a4a5bb9a-e1b4-4bae-ae56-f17f1b3178ac",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2603.8166970516349,
+            "y": 1047.0593223222343
+          },
+          "nodeIndex": "raw_journal_stats",
+          "nodeLineageTag": "36146fd9-1f6a-4daf-bb78-8b891c4f562c",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1733.1495044806368,
+            "y": 1357.5331834548829
+          },
+          "nodeIndex": "raw_pub_citing_publication",
+          "nodeLineageTag": "91d59707-d0c0-4e1a-97c3-7ef8643e4823",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1394.6780080556061,
+            "y": 329.3148026809356
+          },
+          "nodeIndex": "raw_publication",
+          "nodeLineageTag": "67b3da7f-2e2e-412b-8cb9-6b46543b105a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3174.8062115500229,
+            "y": 489.50624243132097
+          },
+          "nodeIndex": "raw_research_organization",
+          "nodeLineageTag": "29063192-6d71-482d-8d76-bbc7eca8c715",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8259.900951489275,
+            "y": 703.76659172744144
+          },
+          "nodeIndex": "raw_researcher",
+          "nodeLineageTag": "89adf6cb-0aba-4a92-8747-ea37107d3129",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 448.8206647351426
+          },
+          "nodeIndex": "sd_altmetric",
+          "nodeLineageTag": "ef39092a-2472-469f-9e2b-ca8c2f73b158",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 574.50123304375757,
+            "y": -50
+          },
+          "nodeIndex": "sd_altmetric_geo",
+          "nodeLineageTag": "59f1ef73-5117-4917-aca9-87b2a04b1cea",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 465.61812021972264,
+            "y": 983.11421605578391
+          },
+          "nodeIndex": "sd_altmetric_post",
+          "nodeLineageTag": "19d5af79-c058-4599-8942-133f94a683b2",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8727.900951489275,
+            "y": 801.76659172744144
+          },
+          "nodeIndex": "Table",
+          "nodeLineageTag": "ddb01b8b-405b-4365-8b71-95b358c3926b",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8961.900951489275,
+            "y": 801.76659172744144
+          },
+          "nodeIndex": "Table (2)",
+          "nodeLineageTag": "1b669392-0ff9-4675-9c5f-9bbd2390c759",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 9195.900951489275,
+            "y": 801.76659172744144
+          },
+          "nodeIndex": "Top N filter",
+          "nodeLineageTag": "2c37d2a0-80c5-4423-b22c-f3b53cd8a20c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 28.419508051274068,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

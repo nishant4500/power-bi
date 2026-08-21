@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "a417cf92b686c02f2486",
+  "position": {
+    "x": 335.71428571428572,
+    "y": 68.571428571428569,
+    "z": 2000,
+    "height": 74.103661631239547,
+    "width": 292.25698590876522,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_journal"
+                    }
+                  },
+                  "Property": "Journal Scope"
+                }
+              },
+              "queryRef": "di_pub_citing_journal.Journal Scope",
+              "nativeQueryRef": "Journal Scope",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8d869bd2a08c9c100011",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "Journal Scope"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
