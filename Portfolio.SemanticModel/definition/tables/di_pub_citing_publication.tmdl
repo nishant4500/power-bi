@@ -1,0 +1,176 @@
+table di_pub_citing_publication
+	lineageTag: b4f210d2-ec1f-482a-920a-997d539f188e
+
+	measure 'Target Field Citations' = CALCULATE(COUNTROWS(di_pub_citing_publication), di_pub_citing_publication[Is Target Field] = TRUE)
+		formatString: 0
+		lineageTag: e8b50f58-35e2-4f54-907d-d402135809f2
+
+	measure 'Citations From Target Fields %' = DIVIDE([Target Field Citations], COUNTROWS(di_pub_citing_publication))
+		formatString: 0%;-0%;0%
+		lineageTag: 9351ba0a-243e-4410-b561-995c2f260287
+
+	measure 'Cited In Systematic Reviews' =
+			
+			CALCULATE(
+			    COUNTROWS(di_pub_citing_publication),
+			    di_pub_citing_publication[Review Type] = "Systematic Review"
+			)
+		formatString: 0
+		lineageTag: c5c004f3-1e72-49e3-81a2-b4f95f1c3a19
+
+	measure 'Cited In Meta-Analyses' =
+			
+			CALCULATE(
+			    COUNTROWS(di_pub_citing_publication),
+			    di_pub_citing_publication[Review Type] = "Meta-Analysis"
+			)
+		formatString: 0
+		lineageTag: 9b5b6f08-a7d7-4dda-997a-98f0a0f37372
+
+	column citing_dimensions_id
+		dataType: string
+		lineageTag: 90f07264-61ff-4957-b17b-b3fdd849eac2
+		summarizeBy: none
+		sourceColumn: citing_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column citing_doi
+		dataType: string
+		lineageTag: f3c81c76-012f-4027-8895-27fdbd214239
+		summarizeBy: none
+		sourceColumn: citing_doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_id
+		dataType: string
+		lineageTag: ad92912b-5a00-4522-8895-781ecf890c19
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: e286b227-961e-4675-b798-da79b3ce84a1
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column pub_year
+		dataType: int64
+		formatString: 0
+		lineageTag: a2827f55-0915-438e-9e24-e5186713eba9
+		summarizeBy: sum
+		sourceColumn: pub_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_type
+		dataType: string
+		lineageTag: b042f4a7-ddff-49e6-88bd-b7f18787072d
+		summarizeBy: none
+		sourceColumn: document_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column times_cited
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c9797e4-4c14-4f86-8898-c678a147e00d
+		summarizeBy: sum
+		sourceColumn: times_cited
+
+		annotation SummarizationSetBy = Automatic
+
+	column field_citation_ratio
+		dataType: string
+		lineageTag: a88fa52b-2d80-4932-bd71-6e429e0f9dd2
+		summarizeBy: none
+		sourceColumn: field_citation_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric_score_citing
+		dataType: string
+		lineageTag: 6ecec29b-8bb1-47b3-aa8c-0dda1bed6ce5
+		summarizeBy: none
+		sourceColumn: altmetric_score_citing
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_dimensions_id
+		dataType: string
+		lineageTag: 14b93541-93aa-4846-ac92-228ac4209873
+		summarizeBy: none
+		sourceColumn: original_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_doi
+		dataType: string
+		lineageTag: e0caf5bf-cfbc-40b8-a8a2-e8ecae57c554
+		summarizeBy: none
+		sourceColumn: original_doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Target Field'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 01be65be-dc08-4c7d-8250-3b1963e655c7
+		summarizeBy: none
+		sourceColumn: Is Target Field
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Citing Field'
+		dataType: string
+		lineageTag: 0f57c6d1-adbd-4d8a-9b05-6ece9a4e83b8
+		summarizeBy: none
+		sourceColumn: Citing Field
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Review Type'
+		dataType: string
+		lineageTag: 0fcac6ad-326b-4a21-a383-0abc0195f7a7
+		summarizeBy: none
+		sourceColumn: Review Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition di_pub_citing_publication = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    di_pub_citing_publication_Sheet = Source{[Item="di_pub_citing_publication",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(di_pub_citing_publication_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"citing_dimensions_id", type text}, {"citing_doi", type text}, {"journal_id", type text}, {"journal_title", type text}, {"pub_year", Int64.Type}, {"document_type", type any}, {"times_cited", Int64.Type}, {"field_citation_ratio", type any}, {"altmetric_score_citing", type any}, {"original_dimensions_id", type text}, {"original_doi", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Is Target Field", each Text.Contains([journal_title], "haematol", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "hematol", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "oncol", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "cancer", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "blood", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "leukemia", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "lymphoma", Comparer.OrdinalIgnoreCase) or
+				Text.Contains([journal_title], "myeloma", Comparer.OrdinalIgnoreCase)),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Is Target Field", type logical}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Citing Field", each if Text.Contains([journal_title], "haematol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "hematol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "blood", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "leukemia", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "lymphoma", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "myeloma", Comparer.OrdinalIgnoreCase) then "Haematology"
+				else if Text.Contains([journal_title], "oncol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "cancer", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "tumour", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "tumor", Comparer.OrdinalIgnoreCase) then "Oncology (general)"
+				else if Text.Contains([journal_title], "pharmac", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "drug", Comparer.OrdinalIgnoreCase) then "Pharmacology"
+				else if Text.Contains([journal_title], "ophthalmol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "eye", Comparer.OrdinalIgnoreCase) then "Ophthalmology"
+				else "Other"),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Review Type", each if Text.Contains([journal_title], "systematic review", Comparer.OrdinalIgnoreCase) then "Systematic Review"
+				else if Text.Contains([journal_title], "meta-anal", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "meta anal", Comparer.OrdinalIgnoreCase) then "Meta-Analysis"
+				else "Other")
+				in
+				    #"Added Custom2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

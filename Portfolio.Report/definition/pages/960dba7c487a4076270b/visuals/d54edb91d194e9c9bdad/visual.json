@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d54edb91d194e9c9bdad",
+  "position": {
+    "x": 37.142857142857146,
+    "y": 284.28571428571428,
+    "z": 10000,
+    "height": 74.285714285714292,
+    "width": 792.85714285714289,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Which journals are citing us?",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  },
+                  {
+                    "value": "                                                                        "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Benchmarked against each journal's own global citation average",
+                    "textStyle": {
+                      "fontSize": "10.5pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

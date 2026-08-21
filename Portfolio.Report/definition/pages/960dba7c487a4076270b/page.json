@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "960dba7c487a4076270b",
+  "displayName": "Scientific Influence",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a89a27e4318a70289a34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "total_citing_publications"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "2cdc3d1b72efa1422697",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "d1f97d3cdcffaf1e42e5",
+        "boundFilter": "a89a27e4318a70289a34",
+        "asAggregation": true,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_journal"
+              }
+            },
+            "Property": "total_citing_publications"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+table enr_altmetric_geo
+	lineageTag: 12f4ee33-eefe-4f32-9fb3-4dec26242f7f
+
+	column doi
+		dataType: string
+		lineageTag: 3edf3149-d764-4042-ad44-c2719f421af9
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column platform
+		dataType: string
+		lineageTag: ea4f5244-7a88-41ff-a6e0-51eadc44dad3
+		summarizeBy: none
+		sourceColumn: platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 1582c34f-10e0-4bdc-a104-861c8a328741
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mention_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1326b606-2947-4162-8c49-0a0833b69b54
+		summarizeBy: sum
+		sourceColumn: mention_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 02c169c8-c628-4770-a775-05cd584a590d
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_altmetric_geo = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    enr_altmetric_geo_Sheet = Source{[Item="enr_altmetric_geo",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_altmetric_geo_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"platform", type text}, {"country_code", type text}, {"mention_count", Int64.Type}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

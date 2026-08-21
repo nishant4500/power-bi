@@ -1,0 +1,23 @@
+table enr_clinical_trial
+	lineageTag: de250fb8-c37f-4c83-ac4e-d0e4d54f8d27
+
+	column Column1
+		dataType: string
+		lineageTag: f33de578-44cb-4cf9-8f0b-c6614bc8f61d
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_clinical_trial = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    enr_clinical_trial_Sheet = Source{[Item="enr_clinical_trial",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(enr_clinical_trial_Sheet,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,22 @@
+table 'Table (2)'
+	lineageTag: 1b669392-0ff9-4675-9c5f-9bbd2390c759
+
+	column 'Top N Filter'
+		dataType: string
+		lineageTag: b171579a-dc26-4a68-9bb8-c5ee40a39d70
+		summarizeBy: none
+		sourceColumn: Top N Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Table (2)' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCskvUDA0UIrVgTCNTOFMU4SooQGE7ZiTo5CcWZKZl66QlV9alJeYU6wUGwsA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Top N Filter" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Top N Filter", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

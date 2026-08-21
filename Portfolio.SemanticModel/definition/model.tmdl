@@ -1,0 +1,86 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["_run_summary","di_citing_organization","di_citing_clinical_trial","di_pub_citing_journal","di_pub_citing_pub_link","di_pub_citing_publication","di_research_organization","document_impact","document_impact_clinical_trial","document_impact_funder","document_impact_geography","document_impact_posts","document_impact_researcher","enr_altmetric","enr_altmetric_geo","enr_altmetric_post","enr_altmetric_sentiment","enr_citing_clinical_trial","enr_citing_organization","enr_citing_organization_bridge","enr_clinical_trial","enr_funder","enr_journal_stats","enr_pub_citing_pub_link","enr_pub_citing_pub_org","enr_pub_citing_publication","enr_publication","enr_publication_clinical_trial","enr_research_organization","enr_researcher","raw_altmetric","raw_citing_clinical_trial","raw_clinical_trial","raw_funder","raw_gsk_org_lookup","raw_journal_stats","raw_pub_citing_publication","raw_publication","raw_research_organization","raw_researcher","sd_altmetric","sd_altmetric_geo","sd_altmetric_post","Table","Table (2)","Top N filter"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table _run_summary
+ref table di_citing_organization
+ref table di_citing_clinical_trial
+ref table DateTableTemplate_7a0b5206-d652-417f-aeac-998798c8ad7f
+ref table LocalDateTable_eba38666-88d7-4c4b-ab40-1a444463557a
+ref table LocalDateTable_06374bb6-9a9f-4b23-969a-735908af949a
+ref table LocalDateTable_278ba7ac-bf2b-44c2-974d-5df57705c105
+ref table di_pub_citing_journal
+ref table di_pub_citing_pub_link
+ref table di_pub_citing_publication
+ref table di_research_organization
+ref table document_impact
+ref table LocalDateTable_59978dfb-9470-44c9-a476-668dab00828c
+ref table document_impact_clinical_trial
+ref table document_impact_funder
+ref table document_impact_geography
+ref table document_impact_posts
+ref table LocalDateTable_cc7b93d5-4447-4afc-b49c-d28a2f6b0fef
+ref table document_impact_researcher
+ref table enr_altmetric
+ref table LocalDateTable_4ca189db-98c2-48ee-a7ac-572bda144965
+ref table LocalDateTable_60c9b36e-14ef-4f6b-8576-5e9581f2027d
+ref table enr_altmetric_geo
+ref table enr_altmetric_post
+ref table LocalDateTable_3fe1fb6c-2b00-49a9-92b8-791e9e64f0e2
+ref table enr_altmetric_sentiment
+ref table enr_citing_clinical_trial
+ref table LocalDateTable_33d91fd9-725a-4a26-8450-6c69edb335bd
+ref table LocalDateTable_d4fd6654-f466-4093-86d2-6d27905bcfbd
+ref table LocalDateTable_85434187-e582-4811-a71f-4b2f502dd660
+ref table enr_citing_organization
+ref table enr_citing_organization_bridge
+ref table enr_clinical_trial
+ref table enr_funder
+ref table enr_journal_stats
+ref table enr_pub_citing_pub_link
+ref table enr_pub_citing_pub_org
+ref table enr_pub_citing_publication
+ref table enr_publication
+ref table LocalDateTable_42ac1177-84fa-4d77-bb84-91f70bad396e
+ref table enr_publication_clinical_trial
+ref table enr_research_organization
+ref table enr_researcher
+ref table raw_altmetric
+ref table LocalDateTable_5a41c97e-bfe9-4b4e-8408-3dbf67807831
+ref table LocalDateTable_fc1c0da6-0cf4-4abf-b333-a7faee2ad213
+ref table raw_citing_clinical_trial
+ref table LocalDateTable_dbc849eb-de65-427b-96df-61368ce9302d
+ref table LocalDateTable_9478a629-8a21-4b55-965e-413bdad38564
+ref table LocalDateTable_86025d48-2b23-4177-94cc-cd02cfe7db0f
+ref table raw_clinical_trial
+ref table raw_funder
+ref table raw_gsk_org_lookup
+ref table raw_journal_stats
+ref table raw_pub_citing_publication
+ref table raw_publication
+ref table LocalDateTable_27175666-ef16-499c-8c0c-eeb72e3f00b8
+ref table raw_research_organization
+ref table raw_researcher
+ref table sd_altmetric
+ref table LocalDateTable_c3b6eebd-7955-4a6f-a984-ef2cd111002d
+ref table LocalDateTable_d048a42a-4ded-4018-b601-e4a05389aa89
+ref table sd_altmetric_geo
+ref table sd_altmetric_post
+ref table LocalDateTable_cea382f3-8fce-4e0f-8c37-7b044a44da3c
+ref table Table
+ref table 'Table (2)'
+ref table 'Top N filter'
+
+ref cultureInfo en-US
+

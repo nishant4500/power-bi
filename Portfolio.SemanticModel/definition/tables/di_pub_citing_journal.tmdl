@@ -1,0 +1,138 @@
+table di_pub_citing_journal
+	lineageTag: e4dce11e-e9ac-4a9f-9dec-b91487d6b605
+
+	measure 'Passes Top N Filter' =
+			
+			VAR Selected = SELECTEDVALUE('Top N Filter'[Journal Rank Filter], "All citing journals")
+			VAR RankVal = MAX(di_pub_citing_journal[journal_rank])
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Selected = "Top 10", RankVal <= 10,
+			    Selected = "Top 25", RankVal <= 25,
+			    Selected = "Top 50", RankVal <= 50,
+			    Selected = "Top 100", RankVal <= 100,
+			    TRUE
+			)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7bb48c54-5170-4f21-bc52-4ee6501e3307
+
+	measure 'Distinct Citing Journals' = DISTINCTCOUNT(di_pub_citing_journal[journal_id])
+		formatString: 0
+		lineageTag: 4fd7ded0-84ca-429c-8241-0a0e5b84cbc2
+
+	column journal_id
+		dataType: string
+		lineageTag: c554a9ef-c52b-4a82-aa31-d433ea31378c
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: 8561651b-b5bc-48da-ba76-ca43cc2ee7d1
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_country
+		dataType: string
+		lineageTag: b4a94e15-1740-4d28-bdc9-df21c2918a3b
+		summarizeBy: none
+		sourceColumn: publisher_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hra
+		dataType: string
+		lineageTag: 11732085-b579-40ce-bdcd-c0b88fcc3bf5
+		summarizeBy: none
+		sourceColumn: category_hra
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_generalist
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 10ecfd4a-9d32-4b61-ad4a-51551e6f1d8d
+		summarizeBy: none
+		sourceColumn: is_generalist
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_avg_citation
+		dataType: double
+		lineageTag: 5b1b8722-7adb-476d-8c10-3c0cd66a2148
+		summarizeBy: sum
+		sourceColumn: journal_avg_citation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_citing_publications
+		dataType: int64
+		formatString: 0
+		lineageTag: c6815650-1c12-4575-865c-56fbfc02693d
+		summarizeBy: sum
+		sourceColumn: total_citing_publications
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_citing_citation
+		dataType: double
+		lineageTag: e7f6d753-e1a0-4d4a-9aaf-b976985b69f1
+		summarizeBy: sum
+		sourceColumn: avg_citing_citation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pct_diff_from_global_avg
+		dataType: double
+		formatString: 0.0
+		lineageTag: bb140f99-c8bb-405f-b768-e2b0d1d734cd
+		summarizeBy: sum
+		sourceColumn: pct_diff_from_global_avg
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 60dbcfcd-93fa-4d0b-83f3-dc92c2d0f126
+		summarizeBy: sum
+		sourceColumn: journal_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Journal Scope'
+		dataType: string
+		lineageTag: b5b59d31-f733-45a5-83f5-ff17ffd60cef
+		summarizeBy: none
+		sourceColumn: Journal Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	partition di_pub_citing_journal = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    di_pub_citing_journal_Sheet = Source{[Item="di_pub_citing_journal",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(di_pub_citing_journal_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"journal_id", type text}, {"journal_title", type text}, {"publisher_country", type any}, {"category_hra", type any}, {"is_generalist", type logical}, {"journal_avg_citation", type number}, {"total_citing_publications", Int64.Type}, {"avg_citing_citation", type number}, {"pct_diff_from_global_avg", type number}, {"journal_rank", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Journal Scope", each if List.Contains({"bioRxiv","medRxiv","arXiv","Preprints.org","JMIR Preprints"}, [journal_title]) then "Preprint server"
+				else if Text.Contains([journal_title], "haematol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "hematol", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "blood", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "leukemia", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "myeloma", Comparer.OrdinalIgnoreCase) or Text.Contains([journal_title], "lymphoma", Comparer.OrdinalIgnoreCase) then "Specialist haematology"
+				else if [is_generalist] = true then "Generalist oncology"
+				else "Other")
+				in
+				    #"Added Custom"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

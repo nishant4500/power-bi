@@ -1,0 +1,57 @@
+table sd_altmetric_geo
+	lineageTag: 59f1ef73-5117-4917-aca9-87b2a04b1cea
+
+	column doi
+		dataType: string
+		lineageTag: c17c3f9d-cc99-471c-991f-9732be51e0db
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column platform
+		dataType: string
+		lineageTag: 7980e8d5-9ecb-427a-b0e6-d59c57345d9f
+		summarizeBy: none
+		sourceColumn: platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: f3d30334-43bd-40ce-bcd2-a237532b8c7a
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mention_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 210ea17b-eeb1-4a55-acf2-c4b76e520818
+		summarizeBy: sum
+		sourceColumn: mention_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column sample_note
+		dataType: string
+		lineageTag: 673705cd-a958-49af-8709-c10a17845321
+		summarizeBy: none
+		sourceColumn: sample_note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_altmetric_geo = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("F:\impact_workbook (1) (1).xlsx"), null, true),
+				    sd_altmetric_geo_Sheet = Source{[Item="sd_altmetric_geo",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(sd_altmetric_geo_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"platform", type text}, {"country_code", type text}, {"mention_count", Int64.Type}, {"sample_note", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,318 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "15da99ce55664293832d",
+  "position": {
+    "x": 798.57142857142867,
+    "y": 520,
+    "z": 12000,
+    "height": 200,
+    "width": 407.14285714285717,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_publication"
+                    }
+                  },
+                  "Property": "Cited In Systematic Reviews"
+                }
+              },
+              "queryRef": "di_pub_citing_publication.Cited In Systematic Reviews",
+              "nativeQueryRef": "Cited In Systematic Reviews"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_pub_citing_publication"
+                    }
+                  },
+                  "Property": "Cited In Meta-Analyses"
+                }
+              },
+              "queryRef": "di_pub_citing_publication.Cited In Meta-Analyses",
+              "nativeQueryRef": "Cited In Meta-Analyses"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "di_citing_clinical_trial"
+                    }
+                  },
+                  "Property": "Cited In Clinical Trials"
+                }
+              },
+              "queryRef": "di_citing_clinical_trial.Cited In Clinical Trials",
+              "nativeQueryRef": "Cited In Clinical Trials"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Cited In Patents"
+                }
+              },
+              "queryRef": "document_impact.Cited In Patents",
+              "nativeQueryRef": "Cited In Patents"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "valuesOnRow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "autoExpand": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "219.75131097754888D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "di_pub_citing_publication.Cited In Systematic Reviews"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Reuse by subsequent research'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How the evidence is being carried forward'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4f5643494e544584976",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_publication"
+              }
+            },
+            "Property": "Cited In Systematic Reviews"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fc0d26c7745556a3810b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_pub_citing_publication"
+              }
+            },
+            "Property": "Cited In Meta-Analyses"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a651d5b4bd0fcfff6fe4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "di_citing_clinical_trial"
+              }
+            },
+            "Property": "Cited In Clinical Trials"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ea0bf686845dfad4e985",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "document_impact"
+              }
+            },
+            "Property": "Cited In Patents"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

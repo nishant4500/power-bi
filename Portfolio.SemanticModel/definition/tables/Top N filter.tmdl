@@ -1,0 +1,22 @@
+table 'Top N filter'
+	lineageTag: 2c37d2a0-80c5-4423-b22c-f3b53cd8a20c
+
+	column 'Journal Rank Filter'
+		dataType: string
+		lineageTag: f94bb126-4333-4460-babc-d1a822910a6a
+		summarizeBy: none
+		sourceColumn: Journal Rank Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Top N filter' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCskvUDA0UIrVgTCNTOFMU4SooQGE7ZiTo5CcWZKZl66QlV9alJeYU6wUGwsA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Journal Rank Filter" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Journal Rank Filter", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
