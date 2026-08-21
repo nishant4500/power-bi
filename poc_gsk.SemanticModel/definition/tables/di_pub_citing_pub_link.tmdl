@@ -1,0 +1,47 @@
+table di_pub_citing_pub_link
+	lineageTag: 7758f544-beb9-4e2b-8a22-53b005d519f6
+
+	column Column1
+		dataType: string
+		lineageTag: b2a2b9e6-cd0e-471e-a248-4c248bd7150e
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 83726e86-7f34-4a87-886a-b57235be54b7
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: a2141898-ca16-4502-b761-d2a85ae02863
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 0df02115-6897-4d55-a008-5c1d3c82a98c
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	partition di_pub_citing_pub_link = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    di_pub_citing_pub_link_Sheet = Source{[Item="di_pub_citing_pub_link",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(di_pub_citing_pub_link_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

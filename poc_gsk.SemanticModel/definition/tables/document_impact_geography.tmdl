@@ -1,0 +1,57 @@
+table document_impact_geography
+	lineageTag: b7d5cc0f-470f-44bc-9ff3-3735cd01f8de
+
+	column doi
+		dataType: string
+		lineageTag: 6b1779d8-1a01-416c-a618-15803e336090
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column platform
+		dataType: string
+		lineageTag: 0e2773d9-9675-45ac-a428-2f6e69da04dc
+		summarizeBy: none
+		sourceColumn: platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 1c67c9fd-9804-4775-8fa6-0ec5e85c0880
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column mention_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4287f55c-4164-4a2c-9f1d-627652250c33
+		summarizeBy: sum
+		sourceColumn: mention_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column sample_note
+		dataType: string
+		lineageTag: 49886268-0731-46a9-ab30-762bdb1800c6
+		summarizeBy: none
+		sourceColumn: sample_note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition document_impact_geography = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    document_impact_geography_Sheet = Source{[Item="document_impact_geography",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(document_impact_geography_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"platform", type text}, {"country_code", type text}, {"mention_count", Int64.Type}, {"sample_note", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

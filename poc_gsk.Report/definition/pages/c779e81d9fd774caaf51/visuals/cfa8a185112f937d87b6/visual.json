@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "cfa8a185112f937d87b6",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 84.285714285714292,
+    "width": 567.14285714285722,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Scientific Visibility",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Whether the evidence is being seen and cited at all, and how that is trending.",
+                    "textStyle": {
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

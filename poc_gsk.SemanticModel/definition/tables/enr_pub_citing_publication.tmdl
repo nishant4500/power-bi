@@ -1,0 +1,98 @@
+table enr_pub_citing_publication
+	lineageTag: 1d848364-26e2-49aa-ba0a-7162a7c4a40f
+
+	column citing_dimensions_id
+		dataType: string
+		lineageTag: 1eca5245-f39b-435d-abfe-62cb886045d2
+		summarizeBy: none
+		sourceColumn: citing_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column citing_doi
+		dataType: string
+		lineageTag: bae81eaf-fe1c-4874-afab-dd4fd2ddcaa1
+		summarizeBy: none
+		sourceColumn: citing_doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_id
+		dataType: string
+		lineageTag: ab3c6ec1-e517-4ae2-90b0-f06fcb49c1d9
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: cedfa24d-1b40-4c4f-8a83-a54002d837e0
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column pub_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 577eb73f-d509-49ae-89ce-e27d84f77508
+		summarizeBy: sum
+		sourceColumn: pub_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column document_type
+		dataType: string
+		lineageTag: 54725d3f-3dfd-4e9d-8ffe-9d726eb46477
+		summarizeBy: none
+		sourceColumn: document_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column times_cited
+		dataType: int64
+		formatString: 0
+		lineageTag: d45d5064-55c5-4407-916a-0977cced98ea
+		summarizeBy: sum
+		sourceColumn: times_cited
+
+		annotation SummarizationSetBy = Automatic
+
+	column field_citation_ratio
+		dataType: string
+		lineageTag: 882c017c-1be1-427e-96d1-2905368e63d6
+		summarizeBy: none
+		sourceColumn: field_citation_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric_score_citing
+		dataType: string
+		lineageTag: 6a1c5a98-bcad-4c9b-ba07-91784a0d2ec5
+		summarizeBy: none
+		sourceColumn: altmetric_score_citing
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 658ce3af-7bb5-4d1a-a59d-74663552a1f3
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_pub_citing_publication = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_pub_citing_publication_Sheet = Source{[Item="enr_pub_citing_publication",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_pub_citing_publication_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"citing_dimensions_id", type text}, {"citing_doi", type text}, {"journal_id", type text}, {"journal_title", type text}, {"pub_year", Int64.Type}, {"document_type", type text}, {"times_cited", Int64.Type}, {"field_citation_ratio", type any}, {"altmetric_score_citing", type any}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

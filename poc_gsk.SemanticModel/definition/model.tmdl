@@ -1,0 +1,118 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+/// Errors in queries that were loaded on 21-08-2026 11:56:35.
+queryGroup 'Query Errors - 21-08-2026 11:56:35'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errors in queries that were loaded on 21-08-2026 13:20:00.
+queryGroup 'Query Errors - 21-08-2026 13:20:00'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errors in queries that were loaded on 21-08-2026 13:22:32.
+queryGroup 'Query Errors - 21-08-2026 13:22:32'
+
+	annotation PBI_QueryGroupOrder = 2
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["_run_summary","di_citing_clinical_trial","di_citing_organization","di_pub_citing_journal","di_pub_citing_pub_link","di_pub_citing_publication","di_research_organization","document_impact","document_impact_clinical_trial","document_impact_funder","document_impact_posts","document_impact_geography","document_impact_researcher","enr_altmetric","enr_altmetric_geo","enr_altmetric_post","enr_altmetric_sentiment","enr_citing_clinical_trial","enr_citing_organization","enr_citing_organization_bridge","enr_clinical_trial","enr_funder","enr_journal_stats","enr_pub_citing_pub_link","enr_pub_citing_pub_org","enr_pub_citing_publication","enr_publication","enr_publication_clinical_trial","enr_research_organization","enr_researcher","raw_altmetric","raw_citing_clinical_trial","raw_clinical_trial","raw_funder","raw_gsk_org_lookup","raw_journal_stats","raw_pub_citing_publication","raw_publication","raw_research_organization","raw_researcher","sd_altmetric","sd_altmetric_geo","sd_altmetric_post","sd_altmetric_sentiment","sd_citing_clinical_trial","sd_citing_organization","sd_citing_organization_bridge","sd_clinical_trial","sd_funder","sd_gsk_org_lookup","sd_pub_citing_pub_link","sd_journal_stats","sd_pub_citing_pub_org","sd_pub_citing_publication","sd_publication_clinical_trial","sd_research_organization","sd_researcher","sd_study_document","unresolved_dois","Errors in document_impact","Errors in document_impact (2)","Errors in document_impact (3)"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table _run_summary
+ref table di_citing_clinical_trial
+ref table DateTableTemplate_aa07fc1c-200f-4a74-8226-7820bda8b984
+ref table LocalDateTable_64a1ddb8-d780-46c1-a9ea-624938df717e
+ref table LocalDateTable_dfae3f1b-a686-4168-a2ba-8e89e458c634
+ref table LocalDateTable_009de432-3720-4a76-83af-1c1974d2ffd9
+ref table di_citing_organization
+ref table di_pub_citing_journal
+ref table di_pub_citing_pub_link
+ref table di_pub_citing_publication
+ref table di_research_organization
+ref table document_impact
+ref table LocalDateTable_64749973-e55b-412c-a81e-88355a75fbce
+ref table document_impact_clinical_trial
+ref table document_impact_funder
+ref table document_impact_posts
+ref table LocalDateTable_1fe2b401-3464-4c76-928a-6636277c965b
+ref table document_impact_geography
+ref table document_impact_researcher
+ref table enr_altmetric
+ref table LocalDateTable_6ab9110d-d186-473a-a5a1-ea1480e48e86
+ref table LocalDateTable_6d9c9f6c-9a2c-42b6-9554-155cf910ada6
+ref table enr_altmetric_geo
+ref table enr_altmetric_post
+ref table LocalDateTable_d9e23a38-4cb6-4e9e-b9e2-4c3ef344cfe7
+ref table enr_altmetric_sentiment
+ref table enr_citing_clinical_trial
+ref table LocalDateTable_a6f66514-766e-4a6e-8814-2b20202a5465
+ref table LocalDateTable_29282730-83a3-4101-9e93-4437298989a8
+ref table LocalDateTable_d5c35a2d-14b0-4f71-8151-fd19ce81516a
+ref table enr_citing_organization
+ref table enr_citing_organization_bridge
+ref table enr_clinical_trial
+ref table enr_funder
+ref table enr_journal_stats
+ref table enr_pub_citing_pub_link
+ref table enr_pub_citing_pub_org
+ref table enr_pub_citing_publication
+ref table enr_publication
+ref table LocalDateTable_7f4374ca-c294-4f20-949a-2a30a4ab89c8
+ref table enr_publication_clinical_trial
+ref table enr_research_organization
+ref table enr_researcher
+ref table raw_altmetric
+ref table LocalDateTable_98cdf46c-e8c3-4972-92e8-785fa06ddacc
+ref table LocalDateTable_88270f37-b871-4a90-8358-4088904fc52b
+ref table raw_citing_clinical_trial
+ref table LocalDateTable_390bfcd1-b4ed-458c-9920-93bc5e267825
+ref table LocalDateTable_f24334dd-492f-4c88-a290-bf67d731369d
+ref table LocalDateTable_75487b58-f010-4c17-8b04-3c47d2b82643
+ref table raw_clinical_trial
+ref table raw_funder
+ref table raw_gsk_org_lookup
+ref table raw_journal_stats
+ref table raw_pub_citing_publication
+ref table raw_publication
+ref table LocalDateTable_453d6e3b-02a5-4595-b19c-eee2aee252e4
+ref table raw_research_organization
+ref table raw_researcher
+ref table sd_altmetric
+ref table LocalDateTable_b522a0f9-60a8-4eb0-9e2e-a53e3c7bcef4
+ref table LocalDateTable_4fb9f9f3-3622-44f3-bc35-d8c2080aba95
+ref table sd_altmetric_geo
+ref table sd_altmetric_post
+ref table LocalDateTable_30bfffe9-c368-40cb-97cf-10834688fd23
+ref table sd_altmetric_sentiment
+ref table sd_citing_clinical_trial
+ref table LocalDateTable_7800a88f-3b1f-4f23-a391-dbca5aa2731b
+ref table LocalDateTable_28ff8713-2f7e-4603-9100-caaf1f8b892d
+ref table LocalDateTable_1dbaa676-8ae6-430b-9934-60b79c89e7cf
+ref table sd_citing_organization
+ref table sd_citing_organization_bridge
+ref table sd_clinical_trial
+ref table sd_funder
+ref table sd_gsk_org_lookup
+ref table sd_pub_citing_pub_link
+ref table sd_journal_stats
+ref table sd_pub_citing_pub_org
+ref table sd_pub_citing_publication
+ref table sd_publication_clinical_trial
+ref table sd_research_organization
+ref table sd_researcher
+ref table sd_study_document
+ref table LocalDateTable_690177e0-06dd-4ee2-a155-62f354ebbf0b
+ref table unresolved_dois
+
+ref cultureInfo en-IN
+

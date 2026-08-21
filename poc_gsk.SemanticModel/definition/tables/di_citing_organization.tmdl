@@ -1,0 +1,103 @@
+table di_citing_organization
+	lineageTag: be60e372-ef1f-4998-ace2-9d469e6fe34a
+
+	column grid_id
+		dataType: string
+		lineageTag: f8384ed1-4ee3-4c43-af89-9ae06db84d9a
+		summarizeBy: none
+		sourceColumn: grid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: bd160b92-c5d5-4dc7-9e55-243968d8d7ca
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: b37c349e-c1b3-4636-89c5-79af9a46786f
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_gsk
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a91c1ebc-22bf-49dd-a3bb-a9063aaf0203
+		summarizeBy: none
+		sourceColumn: is_gsk
+
+		annotation SummarizationSetBy = Automatic
+
+	column citing_via_publication_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 02b27b06-265b-4ab8-bfdf-687904239841
+		summarizeBy: sum
+		sourceColumn: citing_via_publication_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column citing_via_clinical_trial_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 854913d0-d4af-4aa3-a607-70164581ebed
+		summarizeBy: sum
+		sourceColumn: citing_via_clinical_trial_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_citing_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f9400b2-f8ff-42e5-88c3-a6f47eaf2df1
+		summarizeBy: sum
+		sourceColumn: total_citing_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_field_citation_ratio
+		dataType: double
+		lineageTag: 0d3ad9b1-140b-496c-a6ce-3045093638ac
+		summarizeBy: sum
+		sourceColumn: avg_field_citation_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_altmetric_score
+		dataType: string
+		lineageTag: 24b52b3b-3a56-4e89-b3e0-a7aebe8111f1
+		summarizeBy: none
+		sourceColumn: avg_altmetric_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d2159bd-951b-4a69-88b8-d860b1168ef7
+		summarizeBy: sum
+		sourceColumn: org_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition di_citing_organization = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    di_citing_organization_Sheet = Source{[Item="di_citing_organization",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(di_citing_organization_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"grid_id", type text}, {"org_name", type text}, {"country_name", type text}, {"is_gsk", type logical}, {"citing_via_publication_count", Int64.Type}, {"citing_via_clinical_trial_count", Int64.Type}, {"total_citing_count", Int64.Type}, {"avg_field_citation_ratio", type number}, {"avg_altmetric_score", type any}, {"org_rank", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

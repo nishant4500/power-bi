@@ -1,0 +1,95 @@
+table enr_altmetric_sentiment
+	lineageTag: f526839e-12f2-4bf9-9294-169052c8816b
+
+	column doi
+		dataType: string
+		lineageTag: 0120845c-ee61-4357-a9cd-9ea0c6c4d349
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_strong_neg
+		dataType: int64
+		formatString: 0
+		lineageTag: 567002c6-479b-4444-a3e0-e3717329c659
+		summarizeBy: sum
+		sourceColumn: sentiment_strong_neg
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_neg
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d0cf8ae-fded-4605-87ce-cd2295a83c97
+		summarizeBy: sum
+		sourceColumn: sentiment_neg
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_neutral_neg
+		dataType: int64
+		formatString: 0
+		lineageTag: c89fb7b1-9db2-4ee6-aec0-6929f51fa8fd
+		summarizeBy: sum
+		sourceColumn: sentiment_neutral_neg
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_neutral
+		dataType: int64
+		formatString: 0
+		lineageTag: c74f4dd8-0959-4020-9817-ad2000a30315
+		summarizeBy: sum
+		sourceColumn: sentiment_neutral
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_neutral_pos
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fb52c5e-172f-4889-acc8-76fc520d568e
+		summarizeBy: sum
+		sourceColumn: sentiment_neutral_pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_pos
+		dataType: int64
+		formatString: 0
+		lineageTag: 28d32cbf-48d7-41b5-ae97-61761a9c1db6
+		summarizeBy: sum
+		sourceColumn: sentiment_pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_strong_pos
+		dataType: int64
+		formatString: 0
+		lineageTag: 27826472-b098-451c-8dbc-92c72b47ef6f
+		summarizeBy: sum
+		sourceColumn: sentiment_strong_pos
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 3bb1a963-0447-434f-a275-86d404483d45
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_altmetric_sentiment = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_altmetric_sentiment_Sheet = Source{[Item="enr_altmetric_sentiment",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_altmetric_sentiment_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"sentiment_strong_neg", Int64.Type}, {"sentiment_neg", Int64.Type}, {"sentiment_neutral_neg", Int64.Type}, {"sentiment_neutral", Int64.Type}, {"sentiment_neutral_pos", Int64.Type}, {"sentiment_pos", Int64.Type}, {"sentiment_strong_pos", Int64.Type}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

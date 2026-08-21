@@ -1,0 +1,86 @@
+table sd_altmetric_post
+	lineageTag: df361f6c-8bdb-4eea-8a6f-c081b56013bb
+
+	column doi
+		dataType: string
+		lineageTag: 3d2ec157-5788-4892-841e-894902fbcf68
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: de30e769-2e91-43f5-ae81-84048c693ca5
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_url
+		dataType: string
+		lineageTag: 071a18bc-2b2a-47be-bc52-ab20defcf1d3
+		summarizeBy: none
+		sourceColumn: post_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column post_title
+		dataType: string
+		lineageTag: ef9c0292-d1f5-4608-a2cc-dda30e9ca7b6
+		summarizeBy: none
+		sourceColumn: post_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column posted_on
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0af29d6a-aa0c-42b7-b350-08bda2865922
+		summarizeBy: none
+		sourceColumn: posted_on
+
+		variation Variation
+			isDefault
+			relationship: cd1e22ec-7bc1-4c03-8a18-d6864507979a
+			defaultHierarchy: LocalDateTable_30bfffe9-c368-40cb-97cf-10834688fd23.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column author_name
+		dataType: string
+		lineageTag: d71f2f59-cd8e-47e4-8386-4ecc560d30b0
+		summarizeBy: none
+		sourceColumn: author_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary
+		dataType: string
+		lineageTag: 70d7788a-0eb5-4648-9d9c-85b0b9d35b9a
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column sample_note
+		dataType: string
+		lineageTag: c337a53b-f702-47fa-9e5a-3470c9d44f65
+		summarizeBy: none
+		sourceColumn: sample_note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_altmetric_post = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    sd_altmetric_post_Sheet = Source{[Item="sd_altmetric_post",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(sd_altmetric_post_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"source", type text}, {"post_url", type text}, {"post_title", type text}, {"posted_on", type datetime}, {"author_name", type text}, {"summary", type text}, {"sample_note", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

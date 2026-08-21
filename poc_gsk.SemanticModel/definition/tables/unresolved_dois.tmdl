@@ -1,0 +1,23 @@
+table unresolved_dois
+	lineageTag: f3e9d53b-22df-4459-9686-aecb52a33a7c
+
+	column Column1
+		dataType: string
+		lineageTag: 171609a5-4f95-4eb8-b7e1-997d2bdf1306
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition unresolved_dois = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    unresolved_dois_Sheet = Source{[Item="unresolved_dois",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(unresolved_dois_Sheet,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

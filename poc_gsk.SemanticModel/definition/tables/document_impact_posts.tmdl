@@ -1,0 +1,127 @@
+table document_impact_posts
+	lineageTag: bc2270d8-0ed8-42f5-afa1-f3288ea5773a
+
+	measure 'Twitter Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "twitter")
+		formatString: 0
+		lineageTag: 9d046e87-2d01-4401-8ad6-d542eec0333f
+
+	measure 'News Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "news")
+		formatString: 0
+		lineageTag: 66da93b3-1954-4051-b027-a854b19d37ca
+
+	measure 'Bluesky Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "bluesky")
+		formatString: 0
+		lineageTag: fd64cf07-fb8f-4da0-aefc-466d113741c7
+
+	measure 'Reddit Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "reddit")
+		formatString: 0
+		lineageTag: ab663a7f-f5cf-4e3c-91a2-ccb4d527afc9
+
+	measure 'Blogs Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "blogs")
+		formatString: 0
+		lineageTag: ffaacd82-1d3a-4f2f-afe9-589357dbe632
+
+	measure 'Policy Mentions' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "policy")
+		formatString: 0
+		lineageTag: 6385a99b-361b-40b5-ba44-8e059097a63f
+
+	measure 'Highest Score With Journal' = ```
+			
+			FORMAT(MAX(document_impact[altmetric_score]), "0") & " · " & 
+			CALCULATE(
+			    SELECTEDVALUE(document_impact[journal_title_raw]),
+			    document_impact[altmetric_score] = MAX(document_impact[altmetric_score])
+			)
+			```
+		lineageTag: c9a83b55-f332-4e7f-bbd5-67ecc3152bfd
+
+	measure 'Highest Score Publication' =
+			
+			CALCULATE(
+			    SELECTEDVALUE(document_impact[publication_title]),
+			    document_impact[altmetric_score] = MAX(document_impact[altmetric_score])
+			)
+		lineageTag: 097c7603-b177-46bd-aa81-1a2c41de161b
+
+	measure 'Highest Score Label' =
+			
+			[Highest Score Publication] & " · " & [Highest Score With Journal]
+		lineageTag: 30aaf74c-3dfc-429c-afb9-ccd237feb4a4
+
+	measure 'News Count' = CALCULATE(COUNTROWS(document_impact_posts), document_impact_posts[source] = "news")
+		formatString: 0
+		lineageTag: e8727e22-c013-4848-914a-655b58147668
+
+	measure 'Social Count' =
+			
+			CALCULATE(
+			    COUNTROWS(document_impact_posts),
+			    document_impact_posts[source] IN {"twitter", "bluesky", "facebook", "reddit"}
+			)
+		formatString: 0
+		lineageTag: 2380f33b-e6e1-44d5-a05c-4ee770c9ac5a
+
+	measure 'Policy Patents Count' =
+			
+			CALCULATE(
+			    COUNTROWS(document_impact_posts),
+			    document_impact_posts[source] IN {"policy", "guideline", "patent"}
+			)
+		formatString: 0
+		lineageTag: 49fb1297-0c3e-4165-8acf-4e38d26348df
+
+	measure 'Other Count' =
+			
+			CALCULATE(
+			    COUNTROWS(document_impact_posts),
+			    document_impact_posts[source] IN {"blogs", "podcasts", "wikipedia", "video", "peer_reviews", "f1000"}
+			)
+		formatString: 0
+		lineageTag: 17903133-a3c5-4525-af28-9f1e918a01e5
+
+	column doi
+		dataType: string
+		lineageTag: 8a93e771-6f90-4fa9-b595-abc9b1291a13
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: 9a0cbd64-bccc-4401-afd1-dc6c2642da7e
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column posted_on
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f215f846-b8d0-4727-88be-4c0bcd3d2928
+		summarizeBy: none
+		sourceColumn: posted_on
+
+		variation Variation
+			isDefault
+			relationship: d96cbc36-29da-4b25-842c-7988f3cd1a4f
+			defaultHierarchy: LocalDateTable_1fe2b401-3464-4c76-928a-6636277c965b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition document_impact_posts = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    document_impact_posts_Sheet = Source{[Item="document_impact_posts",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(document_impact_posts_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"source", type text}, {"post_url", type text}, {"post_title", type text}, {"posted_on", type datetime}, {"author_name", type text}, {"summary", type text}, {"sample_note", type any}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"doi", "source", "posted_on"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

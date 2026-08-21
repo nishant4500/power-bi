@@ -1,0 +1,105 @@
+table di_pub_citing_journal
+	lineageTag: d8c7f21c-6d51-45f7-82b2-b0a46aa5c57f
+
+	column journal_id
+		dataType: string
+		lineageTag: 3d2aa7c4-e840-4cbc-ae01-3cedbb9f1aa6
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: bb7e0041-7c97-4887-bc93-8bab773fd653
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_country
+		dataType: string
+		lineageTag: 6851b449-4b56-4e47-bfa5-a95f9d43803e
+		summarizeBy: none
+		sourceColumn: publisher_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hra
+		dataType: string
+		lineageTag: 4a17fd2f-fc68-4301-a7d7-a0e698cab2cc
+		summarizeBy: none
+		sourceColumn: category_hra
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_generalist
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 16889534-b115-4af8-92de-01d8eb5efb31
+		summarizeBy: none
+		sourceColumn: is_generalist
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_avg_citation
+		dataType: double
+		lineageTag: 6f75fe22-ffce-4b9d-b0e6-0e85f22e42d8
+		summarizeBy: sum
+		sourceColumn: journal_avg_citation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_citing_publications
+		dataType: int64
+		formatString: 0
+		lineageTag: 944d21be-6558-4708-b7b5-d271ea24867a
+		summarizeBy: sum
+		sourceColumn: total_citing_publications
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_citing_citation
+		dataType: double
+		lineageTag: 41cec880-30c9-4c89-8b70-ac28737a0c62
+		summarizeBy: sum
+		sourceColumn: avg_citing_citation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pct_diff_from_global_avg
+		dataType: double
+		lineageTag: 0b82b026-ae48-44ce-b432-3b82dd90b74c
+		summarizeBy: sum
+		sourceColumn: pct_diff_from_global_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column journal_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: b993c286-2427-4ecb-9939-3cdd0900b710
+		summarizeBy: sum
+		sourceColumn: journal_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition di_pub_citing_journal = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    di_pub_citing_journal_Sheet = Source{[Item="di_pub_citing_journal",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(di_pub_citing_journal_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"journal_id", type text}, {"journal_title", type text}, {"publisher_country", type any}, {"category_hra", type any}, {"is_generalist", type logical}, {"journal_avg_citation", type number}, {"total_citing_publications", Int64.Type}, {"avg_citing_citation", type number}, {"pct_diff_from_global_avg", type number}, {"journal_rank", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

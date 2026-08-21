@@ -1,0 +1,82 @@
+table sd_journal_stats
+	lineageTag: 305a78df-4039-4dd5-93bd-75f59e22e3bb
+
+	column journal_id
+		dataType: string
+		lineageTag: 21ec7aa3-09d4-4a8f-8b18-5523cdb80938
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_title
+		dataType: string
+		lineageTag: e4788dc9-6ae1-4694-b0cb-f36ab6e33cfc
+		summarizeBy: none
+		sourceColumn: journal_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column publisher_country
+		dataType: string
+		lineageTag: 52be7ca8-2641-45de-a159-5742c9f73663
+		summarizeBy: none
+		sourceColumn: publisher_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hra
+		dataType: string
+		lineageTag: f5145b52-c42d-44f4-ab20-073ddfd970b5
+		summarizeBy: none
+		sourceColumn: category_hra
+
+		annotation SummarizationSetBy = Automatic
+
+	column citations_total
+		dataType: int64
+		formatString: 0
+		lineageTag: b1375d72-5295-4c1b-bda8-8f66816771b8
+		summarizeBy: sum
+		sourceColumn: citations_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column paper_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4543a4b2-a90c-4d31-84b9-3ae0ed86975f
+		summarizeBy: sum
+		sourceColumn: paper_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_avg_citation
+		dataType: string
+		lineageTag: 05031d29-745c-4bfc-9b87-b114d5aff61c
+		summarizeBy: none
+		sourceColumn: journal_avg_citation
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_generalist
+		dataType: string
+		lineageTag: c061f980-16f7-48f5-a6e8-34c825f0b3c2
+		summarizeBy: none
+		sourceColumn: is_generalist
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_journal_stats = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    sd_journal_stats_Sheet = Source{[Item="sd_journal_stats",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(sd_journal_stats_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"journal_id", type text}, {"journal_title", type text}, {"publisher_country", type any}, {"category_hra", type any}, {"citations_total", Int64.Type}, {"paper_count", Int64.Type}, {"journal_avg_citation", type any}, {"is_generalist", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

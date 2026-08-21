@@ -1,0 +1,32 @@
+table sd_clinical_trial
+	lineageTag: 0975d5d4-4f8a-4c7e-a96b-3efd76b0ea8d
+
+	column ct_id
+		dataType: string
+		lineageTag: 032492f7-9c0b-466d-841a-1375da41e466
+		summarizeBy: none
+		sourceColumn: ct_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_ids
+		dataType: string
+		lineageTag: 0eb01557-0efc-4462-8473-4885c855d1cc
+		summarizeBy: none
+		sourceColumn: publication_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_clinical_trial = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    sd_clinical_trial_Sheet = Source{[Item="sd_clinical_trial",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(sd_clinical_trial_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ct_id", type any}, {"publication_ids", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

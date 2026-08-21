@@ -1,0 +1,168 @@
+table enr_researcher
+	lineageTag: c3bc6f11-da77-47e3-a055-8df67b86445d
+
+	column source_dimensions_id
+		dataType: string
+		lineageTag: 0578d856-57e6-40e7-8729-6dd25007afb9
+		summarizeBy: none
+		sourceColumn: source_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column researcher_id
+		dataType: string
+		lineageTag: 7fae02d5-a48a-40ed-9570-60e8e91633bf
+		summarizeBy: none
+		sourceColumn: researcher_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 4e713979-0d5d-4bb5-9645-314f9d77a1b2
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 83946563-0499-4645-b41d-a98a65ff9a24
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column orcid_id
+		dataType: string
+		lineageTag: 3cd86f9b-f0e5-4410-9afe-0feca3f6e429
+		summarizeBy: none
+		sourceColumn: orcid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_research_org
+		dataType: string
+		lineageTag: 818e17d3-b45a-4e51-a2c1-e3424be972ba
+		summarizeBy: none
+		sourceColumn: current_research_org
+
+		annotation SummarizationSetBy = Automatic
+
+	column research_orgs
+		dataType: string
+		lineageTag: 2f314fec-8ec6-4338-b00a-45dac98029b1
+		summarizeBy: none
+		sourceColumn: research_orgs
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_grant_year
+		dataType: int64
+		formatString: 0
+		lineageTag: a031f74d-5eef-440e-ab4d-4ba56a9e7e3d
+		summarizeBy: sum
+		sourceColumn: first_grant_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_grant_year
+		dataType: int64
+		formatString: 0
+		lineageTag: f3743300-190a-4d17-86c8-c6fe3c28a331
+		summarizeBy: sum
+		sourceColumn: last_grant_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_publication_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 451e40c0-9493-4b4f-ba1f-15c5c7e840cd
+		summarizeBy: sum
+		sourceColumn: first_publication_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_publication_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 192057de-6885-4238-b064-161428641f82
+		summarizeBy: sum
+		sourceColumn: last_publication_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_grants
+		dataType: int64
+		formatString: 0
+		lineageTag: 3918d3af-a9cc-430c-a872-47370c9bace4
+		summarizeBy: sum
+		sourceColumn: total_grants
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_publications
+		dataType: int64
+		formatString: 0
+		lineageTag: c2e22024-2a04-4ca2-b191-e0d5b91acd94
+		summarizeBy: sum
+		sourceColumn: total_publications
+
+		annotation SummarizationSetBy = Automatic
+
+	column nih_ppid
+		dataType: int64
+		formatString: 0
+		lineageTag: ca190faa-a01a-4198-ad8f-2be7a2f85276
+		summarizeBy: sum
+		sourceColumn: nih_ppid
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimensions_url
+		dataType: string
+		lineageTag: 7a12f560-3503-405f-846e-f9e374e6ae8b
+		summarizeBy: none
+		sourceColumn: dimensions_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column obsolete
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ba28d26-c10f-46b7-8cb9-a9b08f9af546
+		summarizeBy: sum
+		sourceColumn: obsolete
+
+		annotation SummarizationSetBy = Automatic
+
+	column redirect
+		dataType: string
+		lineageTag: 0a8fe09c-ab87-46f4-9374-9fd8ee0a3378
+		summarizeBy: none
+		sourceColumn: redirect
+
+		annotation SummarizationSetBy = Automatic
+
+	column relevance_score
+		dataType: string
+		lineageTag: d5b98075-1652-4e20-916c-af04fea342d6
+		summarizeBy: none
+		sourceColumn: relevance_score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_researcher = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_researcher_Sheet = Source{[Item="enr_researcher",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_researcher_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"source_dimensions_id", type text}, {"researcher_id", type text}, {"first_name", type text}, {"last_name", type text}, {"orcid_id", type text}, {"current_research_org", type text}, {"research_orgs", type text}, {"first_grant_year", Int64.Type}, {"last_grant_year", Int64.Type}, {"first_publication_year", Int64.Type}, {"last_publication_year", Int64.Type}, {"total_grants", Int64.Type}, {"total_publications", Int64.Type}, {"nih_ppid", Int64.Type}, {"dimensions_url", type text}, {"obsolete", Int64.Type}, {"redirect", type text}, {"relevance_score", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

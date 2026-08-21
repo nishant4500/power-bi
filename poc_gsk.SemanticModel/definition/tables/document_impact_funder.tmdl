@@ -1,0 +1,316 @@
+table document_impact_funder
+	lineageTag: 16f7ddf9-9a28-42db-b8c4-0df458afa6fd
+
+	column source_dimensions_id
+		dataType: string
+		lineageTag: 3851228e-f445-4f67-9603-6b153de0cafa
+		summarizeBy: none
+		sourceColumn: source_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_grid_id
+		dataType: string
+		lineageTag: 99815b72-1404-448e-9a4b-0f3c5ed667da
+		summarizeBy: none
+		sourceColumn: org_grid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: 15c0629b-74ca-421c-89a9-046a4c1f43d8
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column acronyms
+		dataType: string
+		lineageTag: e44d2016-a502-4294-873d-0067621f8290
+		summarizeBy: none
+		sourceColumn: acronyms
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_name
+		dataType: string
+		lineageTag: 0b4711b3-cca7-4570-8afe-e27b8581671f
+		summarizeBy: none
+		sourceColumn: city_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cnrs_ids
+		dataType: string
+		lineageTag: c1624852-2577-4787-b90d-5be294e25ec3
+		summarizeBy: none
+		sourceColumn: cnrs_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 12b9b10c-3276-44e1-b8d5-09c2db250901
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: a8a2c824-e3d3-4ce9-8a7b-34566c9d6dc7
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column dimensions_url
+		dataType: string
+		lineageTag: 08c533a6-a1ce-42d3-9320-c7a80de6f13f
+		summarizeBy: none
+		sourceColumn: dimensions_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column established
+		dataType: string
+		lineageTag: 9d8e0083-c0cd-401a-90f7-bdbda5783ce5
+		summarizeBy: none
+		sourceColumn: established
+
+		annotation SummarizationSetBy = Automatic
+
+	column external_ids_fundref
+		dataType: string
+		lineageTag: 86e6ef94-c14d-478e-877b-b98e73f13488
+		summarizeBy: none
+		sourceColumn: external_ids_fundref
+
+		annotation SummarizationSetBy = Automatic
+
+	column hesa_ids
+		dataType: string
+		lineageTag: 363684b8-019e-4ebf-baf2-cb916c33b52d
+		summarizeBy: none
+		sourceColumn: hesa_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column hierarchy_details
+		dataType: string
+		lineageTag: 6f8061db-ef1c-4d9c-aa3a-166edf777311
+		summarizeBy: none
+		sourceColumn: hierarchy_details
+
+		annotation SummarizationSetBy = Automatic
+
+	column isni_ids
+		dataType: string
+		lineageTag: 06b3bc18-7686-4621-9c2c-7922a49ec644
+		summarizeBy: none
+		sourceColumn: isni_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 8579906d-5849-4627-83cb-dcab44ba1431
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column linkout
+		dataType: string
+		lineageTag: 8e076367-ee1f-4673-9c94-9d71b91cbe18
+		summarizeBy: none
+		sourceColumn: linkout
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: double
+		lineageTag: 9626a732-e9d6-4fc6-9ec1-82431cdfe5b5
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nuts_level1_code
+		dataType: string
+		lineageTag: e4a33ab1-0ca8-4532-8723-abb21c8b4edd
+		summarizeBy: none
+		sourceColumn: nuts_level1_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuts_level1_name
+		dataType: string
+		lineageTag: 71b66abc-50e2-40d6-9fdf-8e510430f33f
+		summarizeBy: none
+		sourceColumn: nuts_level1_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuts_level2_code
+		dataType: string
+		lineageTag: 7cffcfd3-0c4f-471a-a10b-f5e3c0afcc74
+		summarizeBy: none
+		sourceColumn: nuts_level2_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuts_level2_name
+		dataType: string
+		lineageTag: 74b5909b-22a7-4a8d-8a78-75d7dfcf19c9
+		summarizeBy: none
+		sourceColumn: nuts_level2_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuts_level3_code
+		dataType: string
+		lineageTag: 6ee7bee0-5fad-4686-b4a5-197176d4e03a
+		summarizeBy: none
+		sourceColumn: nuts_level3_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column nuts_level3_name
+		dataType: string
+		lineageTag: 9a9a8889-3d5e-440c-be78-f58fee0eeb23
+		summarizeBy: none
+		sourceColumn: nuts_level3_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_child_ids
+		dataType: string
+		lineageTag: f9930038-00bc-49f0-b3a0-1b8eca6da124
+		summarizeBy: none
+		sourceColumn: organization_child_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_parent_ids
+		dataType: string
+		lineageTag: 05cdc6ba-063e-4bb7-bdff-da645f0f1902
+		summarizeBy: none
+		sourceColumn: organization_parent_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column organization_related_ids
+		dataType: string
+		lineageTag: 8353f2fe-c31c-49b0-91d9-85e02dc6a36a
+		summarizeBy: none
+		sourceColumn: organization_related_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column orgref_ids
+		dataType: string
+		lineageTag: 1b6f4111-61fb-47a6-9bf3-a4270c5e9568
+		summarizeBy: none
+		sourceColumn: orgref_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column redirect
+		dataType: string
+		lineageTag: adc016c0-9724-4251-b2e6-8ff3748f12d5
+		summarizeBy: none
+		sourceColumn: redirect
+
+		annotation SummarizationSetBy = Automatic
+
+	column ror_ids
+		dataType: string
+		lineageTag: 34c1084a-34a1-461b-b789-acca526b9f65
+		summarizeBy: none
+		sourceColumn: ror_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		lineageTag: fe477080-a47d-46ae-96f9-563f08a7ea8e
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: ef43e91e-6f1f-4cbe-b507-60190b3d8161
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column types
+		dataType: string
+		lineageTag: 67c2cf84-581f-4fb2-8f15-6bacda8378ff
+		summarizeBy: none
+		sourceColumn: types
+
+		annotation SummarizationSetBy = Automatic
+
+	column ucas_ids
+		dataType: string
+		lineageTag: c589e99f-c196-4635-8201-51c704a42e92
+		summarizeBy: none
+		sourceColumn: ucas_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column ukprn_ids
+		dataType: string
+		lineageTag: b0560f73-25cc-4711-a721-5c40ad454149
+		summarizeBy: none
+		sourceColumn: ukprn_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column ultimate_parent_id
+		dataType: string
+		lineageTag: 1827b7cd-2cc7-45d9-ba69-86304e1c1421
+		summarizeBy: none
+		sourceColumn: ultimate_parent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column wikidata_ids
+		dataType: string
+		lineageTag: 49f85a6d-77b3-4a63-a756-b348ec8bdf26
+		summarizeBy: none
+		sourceColumn: wikidata_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column wikipedia_url
+		dataType: string
+		lineageTag: d81c09c4-fee5-4f42-9b06-0958624dd260
+		summarizeBy: none
+		sourceColumn: wikipedia_url
+
+		annotation SummarizationSetBy = Automatic
+
+	partition document_impact_funder = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    document_impact_funder_Sheet = Source{[Item="document_impact_funder",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(document_impact_funder_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"source_dimensions_id", type text}, {"org_grid_id", type text}, {"org_name", type text}, {"acronyms", type text}, {"city_name", type text}, {"cnrs_ids", type any}, {"country_code", type text}, {"country_name", type text}, {"dimensions_url", type any}, {"established", type any}, {"external_ids_fundref", type any}, {"hesa_ids", type any}, {"hierarchy_details", type any}, {"isni_ids", type any}, {"latitude", type number}, {"linkout", type text}, {"longitude", type number}, {"nuts_level1_code", type any}, {"nuts_level1_name", type any}, {"nuts_level2_code", type any}, {"nuts_level2_name", type any}, {"nuts_level3_code", type any}, {"nuts_level3_name", type any}, {"organization_child_ids", type any}, {"organization_parent_ids", type any}, {"organization_related_ids", type any}, {"orgref_ids", type any}, {"redirect", type any}, {"ror_ids", type any}, {"state_name", type text}, {"status", type any}, {"types", type text}, {"ucas_ids", type any}, {"ukprn_ids", type any}, {"ultimate_parent_id", type any}, {"wikidata_ids", type any}, {"wikipedia_url", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

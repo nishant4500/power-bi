@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "382fa0498b3bdb2c170c",
+  "position": {
+    "x": 667.14285714285722,
+    "y": 0,
+    "z": 10001,
+    "height": 58.571428571428577,
+    "width": 187.14285714285717,
+    "tabOrder": 10001
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "OA Status Clean"
+                }
+              },
+              "queryRef": "document_impact.OA Status Clean",
+              "nativeQueryRef": "OA Status Clean",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Status'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "country_code",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d1b62b061c54e741c543",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "document_impact"
+              }
+            },
+            "Property": "OA Status Clean"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

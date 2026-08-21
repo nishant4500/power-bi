@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "poc_gsk"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8156a6fd-5b27-4e4d-a04b-03a41ef169ce"
+  }
+}

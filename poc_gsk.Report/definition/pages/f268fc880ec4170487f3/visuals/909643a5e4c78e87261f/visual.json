@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "909643a5e4c78e87261f",
+  "position": {
+    "x": 888.04787996290986,
+    "y": 113.25027396105538,
+    "z": 9000,
+    "height": 110.48807215712721,
+    "width": 314.89100564781251,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Publications With Attention"
+                }
+              },
+              "queryRef": "document_impact.Publications With Attention",
+              "nativeQueryRef": "Publications With Attention"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "document_impact"
+                  }
+                },
+                "Property": "Publications With Attention"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

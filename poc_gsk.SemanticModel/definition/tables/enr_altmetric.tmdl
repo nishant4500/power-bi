@@ -1,0 +1,616 @@
+table enr_altmetric
+	lineageTag: 802d11df-d3ac-4532-863e-323db9f48f14
+
+	column doi
+		dataType: string
+		lineageTag: d2c9d7cb-e342-4c5d-8ae2-8112d63fa15d
+		summarizeBy: none
+		sourceColumn: doi
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric_id
+		dataType: int64
+		formatString: 0
+		lineageTag: aa0ac604-e8d0-44e5-b83a-24851b2cc253
+		summarizeBy: sum
+		sourceColumn: altmetric_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric_publication_date
+		dataType: int64
+		formatString: 0
+		lineageTag: b949ba13-dc1f-4e29-92bf-d0e9553762a5
+		summarizeBy: sum
+		sourceColumn: altmetric_publication_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: 3978680a-9551-40c5-a98f-fdc8511a5f90
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_posts_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c0c4d1ba-e578-4384-bad2-7cc4614087fd
+		summarizeBy: sum
+		sourceColumn: cited_by_posts_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_tweeters_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c0d64440-6fce-490b-88e4-51aa210d78dd
+		summarizeBy: sum
+		sourceColumn: cited_by_tweeters_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_guidelines_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f7e43ba-56da-4687-a271-28d295310c26
+		summarizeBy: sum
+		sourceColumn: cited_by_guidelines_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_msm_count
+		dataType: int64
+		formatString: 0
+		lineageTag: cdd99844-cb6d-476f-a619-b494d7c28131
+		summarizeBy: sum
+		sourceColumn: cited_by_msm_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_feeds_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 2af7d576-385a-4bf5-a979-cf89318b7fe1
+		summarizeBy: sum
+		sourceColumn: cited_by_feeds_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mendeley_readers
+		dataType: int64
+		formatString: 0
+		lineageTag: f363baa5-6010-4b07-a5a2-da55ee61f8ee
+		summarizeBy: sum
+		sourceColumn: mendeley_readers
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_patents_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c259ddb2-e409-4cc2-b81e-7bac8c5bc370
+		summarizeBy: sum
+		sourceColumn: cited_by_patents_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_bluesky_count
+		dataType: int64
+		formatString: 0
+		lineageTag: c38ce294-e81e-47a9-b707-b11bccc4b0e7
+		summarizeBy: sum
+		sourceColumn: cited_by_bluesky_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_sci_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f8c07d7-6216-4c81-ab46-affcd6ad6991
+		summarizeBy: sum
+		sourceColumn: n_sci_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_doc_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a938f0b-edcf-4e38-ba26-b61f988868e0
+		summarizeBy: sum
+		sourceColumn: n_doc_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_pub_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: a7297b5f-d16a-4971-9012-94e4c169aebf
+		summarizeBy: sum
+		sourceColumn: n_pub_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_practitioner_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: b69d3f4d-3965-4063-835b-e9fb9571b5a5
+		summarizeBy: sum
+		sourceColumn: n_practitioner_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_researcher_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: 9772f552-ac95-40bf-bcb6-37ee661a6579
+		summarizeBy: sum
+		sourceColumn: n_researcher_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_com_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: fc47d343-61a7-4c30-952a-adcc77db8c15
+		summarizeBy: sum
+		sourceColumn: n_com_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_members_of_public_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cfbe00c-09c8-406d-9a77-66a1930b39a7
+		summarizeBy: sum
+		sourceColumn: n_members_of_public_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_science_communicator_mentions
+		dataType: int64
+		formatString: 0
+		lineageTag: 6341d079-9db3-4682-bf4d-e51d6548b07e
+		summarizeBy: sum
+		sourceColumn: n_science_communicator_mentions
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric_score
+		dataType: double
+		lineageTag: 8a04f72e-ac07-4bbd-bcdf-41b1ef565429
+		summarizeBy: sum
+		sourceColumn: altmetric_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 954cf50a-4828-45be-a855-3e1054944ace
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column pmid
+		dataType: int64
+		formatString: 0
+		lineageTag: 45559e6d-ccd3-490f-8ecb-26aff62161b1
+		summarizeBy: sum
+		sourceColumn: pmid
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 34adeeb9-220f-46d3-9f6f-e9466e6ec39f
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal
+		dataType: string
+		lineageTag: 2ac9ce8f-63ce-4d7d-a350-8a16ac95c312
+		summarizeBy: none
+		sourceColumn: journal
+
+		annotation SummarizationSetBy = Automatic
+
+	column score
+		dataType: double
+		lineageTag: c25386c3-9612-4821-897e-259f1f93d8bf
+		summarizeBy: sum
+		sourceColumn: score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score_1d
+		dataType: int64
+		formatString: 0
+		lineageTag: fe6a5499-11dc-4e95-a25c-1be3bf069282
+		summarizeBy: sum
+		sourceColumn: score_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_1w
+		dataType: int64
+		formatString: 0
+		lineageTag: ecfafbdb-2be0-41d0-99eb-ce04f072af4a
+		summarizeBy: sum
+		sourceColumn: score_1w
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_1m
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ffa2ad4-7836-4558-8d36-fb4c82a42863
+		summarizeBy: sum
+		sourceColumn: score_1m
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_3m
+		dataType: double
+		lineageTag: e1d406ac-1c81-4fd2-88ec-7e6e58fca968
+		summarizeBy: sum
+		sourceColumn: score_3m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score_6m
+		dataType: double
+		lineageTag: 10013a0b-0add-4610-9576-ee99eeb0f982
+		summarizeBy: sum
+		sourceColumn: score_6m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score_1y
+		dataType: double
+		lineageTag: 416fd584-91f4-43bd-ab0b-724390a7e20b
+		summarizeBy: sum
+		sourceColumn: score_1y
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_all_mean
+		dataType: double
+		lineageTag: 044bee86-386e-48d4-a160-30c421de60cd
+		summarizeBy: sum
+		sourceColumn: context_all_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_all_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c802b82-a304-4f27-abb5-f6f597dd9aef
+		summarizeBy: sum
+		sourceColumn: context_all_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column context_all_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dc90ed3-8738-4f7d-93a5-37e9b61ff6f6
+		summarizeBy: sum
+		sourceColumn: context_all_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column context_journal_mean
+		dataType: double
+		lineageTag: e02dfad1-951a-445e-b1a3-07fc960eed9d
+		summarizeBy: sum
+		sourceColumn: context_journal_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_journal_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ac31e9f-c9a4-45b6-9dda-12ef82a71fcf
+		summarizeBy: sum
+		sourceColumn: context_journal_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column context_journal_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e0ee945-c7b0-4fda-a41d-3ca90210b907
+		summarizeBy: sum
+		sourceColumn: context_journal_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column context_similar_age_mean
+		dataType: double
+		lineageTag: d7c6c85d-459f-4c98-a12b-c0977f03c6ee
+		summarizeBy: sum
+		sourceColumn: context_similar_age_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_similar_age_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a2e6e50-5438-4c83-b06a-04f3381285fb
+		summarizeBy: sum
+		sourceColumn: context_similar_age_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 3eb52980-70a7-4af8-a531-d4a3eea63d77
+		summarizeBy: sum
+		sourceColumn: count_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_twitter
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f4ded55-f662-4089-aa23-cf0cf7411d49
+		summarizeBy: sum
+		sourceColumn: count_twitter
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_news
+		dataType: int64
+		formatString: 0
+		lineageTag: 85ab811b-397c-4ccb-b940-b0c8554e2b2e
+		summarizeBy: sum
+		sourceColumn: count_news
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_blogs
+		dataType: int64
+		formatString: 0
+		lineageTag: 55b9d0b4-a9a2-4508-9b88-f8be0acf42bd
+		summarizeBy: sum
+		sourceColumn: count_blogs
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_facebook
+		dataType: int64
+		formatString: 0
+		lineageTag: cbefa51b-c10f-4121-8f86-36c51e5a6773
+		summarizeBy: sum
+		sourceColumn: count_facebook
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_reddit
+		dataType: int64
+		formatString: 0
+		lineageTag: 6534c8a8-928a-47b0-81db-08813218706c
+		summarizeBy: sum
+		sourceColumn: count_reddit
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_wikipedia
+		dataType: int64
+		formatString: 0
+		lineageTag: d15c4f35-1e4e-45f2-a7be-13e370ff502d
+		summarizeBy: sum
+		sourceColumn: count_wikipedia
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_policy
+		dataType: int64
+		formatString: 0
+		lineageTag: e75d6735-e382-43e5-b160-e76c18aa98c4
+		summarizeBy: sum
+		sourceColumn: count_policy
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_patent
+		dataType: int64
+		formatString: 0
+		lineageTag: d196f473-8a4a-4886-9a3d-8a0093c779d3
+		summarizeBy: sum
+		sourceColumn: count_patent
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_video
+		dataType: int64
+		formatString: 0
+		lineageTag: 04d49660-1112-4c98-aeb0-8676c1713859
+		summarizeBy: sum
+		sourceColumn: count_video
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_mendeley
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f6b3cf1-6fa2-4d1c-86ea-78722107614e
+		summarizeBy: sum
+		sourceColumn: count_mendeley
+
+		annotation SummarizationSetBy = Automatic
+
+	column cited_by_accounts_count
+		dataType: string
+		lineageTag: b58ec289-0396-492f-9ea7-81aed639b0cb
+		summarizeBy: none
+		sourceColumn: cited_by_accounts_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated
+		dataType: string
+		lineageTag: cd27117c-9110-4bc5-b5c1-02f364d9524c
+		summarizeBy: none
+		sourceColumn: last_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column readers_mendeley
+		dataType: int64
+		formatString: 0
+		lineageTag: f2e458c8-5d2d-441c-9ac4-1f1602663a94
+		summarizeBy: sum
+		sourceColumn: readers_mendeley
+
+		annotation SummarizationSetBy = Automatic
+
+	column readers_citeulike
+		dataType: int64
+		formatString: 0
+		lineageTag: c78bafed-ea30-4a46-b1d1-98c1bde21fdc
+		summarizeBy: sum
+		sourceColumn: readers_citeulike
+
+		annotation SummarizationSetBy = Automatic
+
+	column readers_connotea
+		dataType: int64
+		formatString: 0
+		lineageTag: f469b258-2f28-4c44-a1a9-6b4c457c34c6
+		summarizeBy: sum
+		sourceColumn: readers_connotea
+
+		annotation SummarizationSetBy = Automatic
+
+	column context_similar_age_journal_mean
+		dataType: double
+		lineageTag: ecc3bcf7-c562-454a-8d78-ae3c6e1ef613
+		summarizeBy: sum
+		sourceColumn: context_similar_age_journal_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_similar_age_journal_pct
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c60e914-fb6e-4a36-8f72-e81640aaf3fa
+		summarizeBy: sum
+		sourceColumn: context_similar_age_journal_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_pmc
+		dataType: string
+		lineageTag: 413d8bd0-f1aa-40d6-b913-f46582fd850e
+		summarizeBy: none
+		sourceColumn: citation_pmc
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_arxiv_id
+		dataType: string
+		lineageTag: 76275b24-df2b-43c3-a72b-65a059db438e
+		summarizeBy: none
+		sourceColumn: citation_arxiv_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_issns
+		dataType: string
+		lineageTag: 95396765-d8f5-4872-96b0-923487c34071
+		summarizeBy: none
+		sourceColumn: citation_issns
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_dimensions_publication_id
+		dataType: string
+		lineageTag: a3449030-1da3-4c57-a1e0-795de332eb6b
+		summarizeBy: none
+		sourceColumn: citation_dimensions_publication_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_type
+		dataType: string
+		lineageTag: 65466ccb-894f-4f3a-a557-7040e6266d8d
+		summarizeBy: none
+		sourceColumn: citation_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_epubdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: af00f4ae-8299-4f03-a4b0-217e103dc9aa
+		summarizeBy: none
+		sourceColumn: citation_epubdate
+
+		variation Variation
+			isDefault
+			relationship: 9e1797f0-74e3-45f6-b325-40d500cb1001
+			defaultHierarchy: LocalDateTable_6ab9110d-d186-473a-a5a1-ea1480e48e86.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column citation_pubdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 10d135c3-7370-4376-9a04-65c650aa8a18
+		summarizeBy: none
+		sourceColumn: citation_pubdate
+
+		variation Variation
+			isDefault
+			relationship: baf121b5-df3f-46c0-92d3-0928653c8ac9
+			defaultHierarchy: LocalDateTable_6d9c9f6c-9a2c-42b6-9554-155cf910ada6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column sentiment_v1_counts
+		dataType: string
+		lineageTag: eeeb78d4-5b4c-4003-9382-3cc2c5f1eef8
+		summarizeBy: none
+		sourceColumn: sentiment_v1_counts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_altmetric = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_altmetric_Sheet = Source{[Item="enr_altmetric",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_altmetric_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"doi", type text}, {"altmetric_id", Int64.Type}, {"altmetric_publication_date", Int64.Type}, {"channel", type text}, {"cited_by_posts_count", Int64.Type}, {"cited_by_tweeters_count", Int64.Type}, {"cited_by_guidelines_count", Int64.Type}, {"cited_by_msm_count", Int64.Type}, {"cited_by_feeds_count", Int64.Type}, {"mendeley_readers", Int64.Type}, {"cited_by_patents_count", Int64.Type}, {"cited_by_bluesky_count", Int64.Type}, {"n_sci_mentions", Int64.Type}, {"n_doc_mentions", Int64.Type}, {"n_pub_mentions", Int64.Type}, {"n_practitioner_mentions", Int64.Type}, {"n_researcher_mentions", Int64.Type}, {"n_com_mentions", Int64.Type}, {"n_members_of_public_mentions", Int64.Type}, {"n_science_communicator_mentions", Int64.Type}, {"altmetric_score", type number}, {"enr_loaded_at", type any}, {"pmid", Int64.Type}, {"title", type text}, {"journal", type text}, {"score", type number}, {"score_1d", Int64.Type}, {"score_1w", Int64.Type}, {"score_1m", Int64.Type}, {"score_3m", type number}, {"score_6m", type number}, {"score_1y", type number}, {"context_all_mean", type number}, {"context_all_rank", Int64.Type}, {"context_all_pct", Int64.Type}, {"context_journal_mean", type number}, {"context_journal_rank", Int64.Type}, {"context_journal_pct", Int64.Type}, {"context_similar_age_mean", type number}, {"context_similar_age_pct", Int64.Type}, {"count_total", Int64.Type}, {"count_twitter", Int64.Type}, {"count_news", Int64.Type}, {"count_blogs", Int64.Type}, {"count_facebook", Int64.Type}, {"count_reddit", Int64.Type}, {"count_wikipedia", Int64.Type}, {"count_policy", Int64.Type}, {"count_patent", Int64.Type}, {"count_video", Int64.Type}, {"count_mendeley", Int64.Type}, {"cited_by_accounts_count", type any}, {"last_updated", type any}, {"readers_mendeley", Int64.Type}, {"readers_citeulike", Int64.Type}, {"readers_connotea", Int64.Type}, {"context_similar_age_journal_mean", type number}, {"context_similar_age_journal_pct", Int64.Type}, {"citation_pmc", type text}, {"citation_arxiv_id", type any}, {"citation_issns", type text}, {"citation_dimensions_publication_id", type text}, {"citation_type", type text}, {"citation_epubdate", type datetime}, {"citation_pubdate", type datetime}, {"sentiment_v1_counts", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

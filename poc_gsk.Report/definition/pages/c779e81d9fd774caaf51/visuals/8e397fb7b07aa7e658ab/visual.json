@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "8e397fb7b07aa7e658ab",
+  "position": {
+    "x": 0,
+    "y": 130,
+    "z": 1000,
+    "height": 120.75512152632373,
+    "width": 1280.2787316370459,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "% Publications Cited"
+                }
+              },
+              "queryRef": "document_impact.% Publications Cited",
+              "nativeQueryRef": "% Publications Cited",
+              "format": "0.00%;-0.00%;0.00%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Total Citations"
+                }
+              },
+              "queryRef": "document_impact.Total Citations",
+              "nativeQueryRef": "Total Citations"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Total Publications"
+                }
+              },
+              "queryRef": "document_impact.Total Publications",
+              "nativeQueryRef": "Total Publications"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Recent Citations (Last 2 Yrs)"
+                }
+              },
+              "queryRef": "document_impact.Recent Citations (Last 2 Yrs)",
+              "nativeQueryRef": "Recent Citations (Last 2 Yrs)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "document_impact"
+                    }
+                  },
+                  "Property": "Median Citations per Publication"
+                }
+              },
+              "queryRef": "document_impact.Median Citations per Publication",
+              "nativeQueryRef": "Median Citations per Publication"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "document_impact"
+                  }
+                },
+                "Property": "% Publications Cited"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

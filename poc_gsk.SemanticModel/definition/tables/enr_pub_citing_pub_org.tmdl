@@ -1,0 +1,64 @@
+table enr_pub_citing_pub_org
+	lineageTag: dddcb97b-9f95-48aa-926e-cd45403c439d
+
+	column citing_dimensions_id
+		dataType: string
+		lineageTag: f1d47784-b459-44f4-9744-07b42c2197d6
+		summarizeBy: none
+		sourceColumn: citing_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column grid_id
+		dataType: string
+		lineageTag: f57e5386-8542-45ec-9d9e-846846c05ee4
+		summarizeBy: none
+		sourceColumn: grid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: 235d1263-f31f-4dcf-b8c3-f76bde65a907
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 26541638-3c71-4c60-a1e2-d0e0fca07691
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_code
+		dataType: string
+		lineageTag: 120f8186-dac2-4053-bcec-37e6674b9c3e
+		summarizeBy: none
+		sourceColumn: country_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 1cf3ed0d-2e5b-4fb2-ad26-826fcbff95e2
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_pub_citing_pub_org = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_pub_citing_pub_org_Sheet = Source{[Item="enr_pub_citing_pub_org",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_pub_citing_pub_org_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"citing_dimensions_id", type text}, {"grid_id", type text}, {"org_name", type text}, {"country_name", type text}, {"country_code", type text}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

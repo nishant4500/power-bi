@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "69675df7f2f3275cd784",
+  "position": {
+    "x": 9.66770631374863,
+    "y": 0,
+    "z": 0,
+    "height": 37.289724353030429,
+    "width": 499.95852651100057,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "External attention",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

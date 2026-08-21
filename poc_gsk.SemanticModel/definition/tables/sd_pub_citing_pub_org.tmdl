@@ -1,0 +1,55 @@
+table sd_pub_citing_pub_org
+	lineageTag: 0c15ba6d-0dca-476c-97e9-18ec2a7c83db
+
+	column Column1
+		dataType: string
+		lineageTag: d4891366-9210-42a8-ae96-72938bca5ce4
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 46737127-213e-49d2-b5bb-e6e5f58be99f
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: ea4bc6d1-0d25-43c6-b92d-6709c5eb6264
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 94124197-f9df-425c-b969-d9049e4e06e4
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 0c98051d-b45e-4188-8487-da3ec82add52
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_pub_citing_pub_org = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    sd_pub_citing_pub_org_Sheet = Source{[Item="sd_pub_citing_pub_org",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(sd_pub_citing_pub_org_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

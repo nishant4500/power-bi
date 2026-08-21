@@ -1,0 +1,386 @@
+table sd_citing_clinical_trial
+	lineageTag: 1f310f97-c162-49c2-8b88-a111df308564
+
+	column cited_dimensions_id
+		dataType: string
+		lineageTag: 9b6eb4e5-58cf-4b00-9695-3a5a372457d7
+		summarizeBy: none
+		sourceColumn: cited_dimensions_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ct_id
+		dataType: string
+		lineageTag: 70a3ce00-1e4b-4348-a728-0a82f11212b3
+		summarizeBy: none
+		sourceColumn: ct_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column abstract
+		dataType: string
+		lineageTag: cff7d89f-2634-4d11-8404-8fd39eccd578
+		summarizeBy: none
+		sourceColumn: abstract
+
+		annotation SummarizationSetBy = Automatic
+
+	column acronym
+		dataType: string
+		lineageTag: 0cbc26e1-5c91-43ae-8d64-2f3758ce5624
+		summarizeBy: none
+		sourceColumn: acronym
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_years
+		dataType: string
+		lineageTag: 407c1436-f950-4bdb-869d-96e440bcef35
+		summarizeBy: none
+		sourceColumn: active_years
+
+		annotation SummarizationSetBy = Automatic
+
+	column altmetric
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e8a7163-0f05-40cb-ae2d-ae11c96175f2
+		summarizeBy: sum
+		sourceColumn: altmetric
+
+		annotation SummarizationSetBy = Automatic
+
+	column associated_grant_ids
+		dataType: string
+		lineageTag: 57c9ad08-40a1-4b91-a527-4cde8c094bd2
+		summarizeBy: none
+		sourceColumn: associated_grant_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column brief_title
+		dataType: string
+		lineageTag: 225d1435-0da7-4056-9ea2-68e6122e8b54
+		summarizeBy: none
+		sourceColumn: brief_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_bra
+		dataType: string
+		lineageTag: 8601f026-f556-4338-9026-b3e4fdebbc09
+		summarizeBy: none
+		sourceColumn: category_bra
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_for
+		dataType: string
+		lineageTag: e59b957a-003d-4617-af16-9a5003fac06b
+		summarizeBy: none
+		sourceColumn: category_for
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hra
+		dataType: string
+		lineageTag: 723c95a0-191f-4404-9b12-df6c09a330d4
+		summarizeBy: none
+		sourceColumn: category_hra
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hrcs_hc
+		dataType: string
+		lineageTag: 160dc712-67fb-4b68-b745-4c506a91cb2b
+		summarizeBy: none
+		sourceColumn: category_hrcs_hc
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_hrcs_rac
+		dataType: string
+		lineageTag: 8a91f936-9089-449c-ae31-5fb652ebd4ca
+		summarizeBy: none
+		sourceColumn: category_hrcs_rac
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_icrp_cso
+		dataType: string
+		lineageTag: 126e3870-af94-4df2-baf1-177da9c7324d
+		summarizeBy: none
+		sourceColumn: category_icrp_cso
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_icrp_ct
+		dataType: string
+		lineageTag: b87b2757-63be-4102-a531-220a3ec7471f
+		summarizeBy: none
+		sourceColumn: category_icrp_ct
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_rcdc
+		dataType: string
+		lineageTag: e69efa92-f821-48a4-b29c-89ee5350460c
+		summarizeBy: none
+		sourceColumn: category_rcdc
+
+		annotation SummarizationSetBy = Automatic
+
+	column conditions
+		dataType: string
+		lineageTag: c3261502-6233-4ec8-bb3e-e9e19527ccf8
+		summarizeBy: none
+		sourceColumn: conditions
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_inserted
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 86669a03-2433-43fc-a7d8-5c46b8b08394
+		summarizeBy: none
+		sourceColumn: date_inserted
+
+		variation Variation
+			isDefault
+			relationship: 04a6d789-448a-4dad-8263-89c0856a45d1
+			defaultHierarchy: LocalDateTable_7800a88f-3b1f-4f23-a391-dbca5aa2731b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column dimensions_url
+		dataType: string
+		lineageTag: caaa2518-e0fd-4a44-82a0-0a88e743056b
+		summarizeBy: none
+		sourceColumn: dimensions_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 65caf5d5-c80f-4947-9a2e-030eefc6dda1
+		summarizeBy: none
+		sourceColumn: end_date
+
+		variation Variation
+			isDefault
+			relationship: 598d407b-0b78-4ffd-96d9-e98743a9f3c3
+			defaultHierarchy: LocalDateTable_28ff8713-2f7e-4603-9100-caaf1f8b892d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column funder_countries
+		dataType: string
+		lineageTag: c4734fe7-2e6a-4fec-a615-8ec80300f1c9
+		summarizeBy: none
+		sourceColumn: funder_countries
+
+		annotation SummarizationSetBy = Automatic
+
+	column funders
+		dataType: string
+		lineageTag: f1982372-3f96-45f3-9311-f8233e86dd7a
+		summarizeBy: none
+		sourceColumn: funders
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 2b3d6165-981d-4545-93a3-9aa95557ed0f
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column interventions
+		dataType: string
+		lineageTag: 69664355-bbf5-4509-a912-6df306fcf076
+		summarizeBy: none
+		sourceColumn: interventions
+
+		annotation SummarizationSetBy = Automatic
+
+	column investigators
+		dataType: string
+		lineageTag: 7a21db50-1140-45ed-80e8-124fec3d922e
+		summarizeBy: none
+		sourceColumn: investigators
+
+		annotation SummarizationSetBy = Automatic
+
+	column linkout
+		dataType: string
+		lineageTag: bea49a5a-c623-4f1b-bf97-13b324d18471
+		summarizeBy: none
+		sourceColumn: linkout
+
+		annotation SummarizationSetBy = Automatic
+
+	column mesh_terms
+		dataType: string
+		lineageTag: c456a4f7-b4f9-4741-b15e-16a0adfc85e5
+		summarizeBy: none
+		sourceColumn: mesh_terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column overall_status
+		dataType: string
+		lineageTag: 99172aa3-c00d-4919-948e-1691b2035b62
+		summarizeBy: none
+		sourceColumn: overall_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column phase
+		dataType: string
+		lineageTag: 54e3ea12-e2b9-4f0c-958d-5824bfa7905f
+		summarizeBy: none
+		sourceColumn: phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_ids
+		dataType: string
+		lineageTag: 85633440-7b1c-4200-9fca-807f8b62023a
+		summarizeBy: none
+		sourceColumn: publication_ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column registry
+		dataType: string
+		lineageTag: 0ebf90b2-74ea-4ee4-a6a0-ba1b16367ec3
+		summarizeBy: none
+		sourceColumn: registry
+
+		annotation SummarizationSetBy = Automatic
+
+	column research_orgs
+		dataType: string
+		lineageTag: afabdc18-b8c7-4bd5-b0a9-389f31b025ad
+		summarizeBy: none
+		sourceColumn: research_orgs
+
+		annotation SummarizationSetBy = Automatic
+
+	column researchers
+		dataType: string
+		lineageTag: a853bf89-23ea-45d7-84c9-8b02bfeee37d
+		summarizeBy: none
+		sourceColumn: researchers
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8068a3db-a253-42c2-8d32-fd8f1110c752
+		summarizeBy: none
+		sourceColumn: start_date
+
+		variation Variation
+			isDefault
+			relationship: d4f55d05-8e8b-484a-aa01-c1b138600a36
+			defaultHierarchy: LocalDateTable_1dbaa676-8ae6-430b-9934-60b79c89e7cf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column study_arms
+		dataType: string
+		lineageTag: aad4146a-a321-4f9d-987b-f0f0be715e12
+		summarizeBy: none
+		sourceColumn: study_arms
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_designs
+		dataType: string
+		lineageTag: 2e5396fa-3180-47cf-a5ad-7bfa28cf8bc2
+		summarizeBy: none
+		sourceColumn: study_designs
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_eligibility_criteria
+		dataType: string
+		lineageTag: e13fd822-5392-41f1-ba4f-ee44f1ea5e33
+		summarizeBy: none
+		sourceColumn: study_eligibility_criteria
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_maximum_age
+		dataType: string
+		lineageTag: 4d3ac050-d98b-42d0-a553-95df1e9e888b
+		summarizeBy: none
+		sourceColumn: study_maximum_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_minimum_age
+		dataType: string
+		lineageTag: 27a31229-7c20-4d9c-92bd-e95e44cfff1f
+		summarizeBy: none
+		sourceColumn: study_minimum_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_outcome_measures
+		dataType: string
+		lineageTag: a0a63669-d3d4-4960-87c9-466ad0345445
+		summarizeBy: none
+		sourceColumn: study_outcome_measures
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_participants
+		dataType: int64
+		formatString: 0
+		lineageTag: 532ef5f7-e5c7-452d-a1d6-e9732bb2a416
+		summarizeBy: sum
+		sourceColumn: study_participants
+
+		annotation SummarizationSetBy = Automatic
+
+	column study_type
+		dataType: string
+		lineageTag: ddacd168-d825-4bd5-9d41-2bcb01d227c8
+		summarizeBy: none
+		sourceColumn: study_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 41e88dfb-a71e-47b9-b127-5c98056e8a6b
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sd_citing_clinical_trial = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    sd_citing_clinical_trial_Sheet = Source{[Item="sd_citing_clinical_trial",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(sd_citing_clinical_trial_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"cited_dimensions_id", type text}, {"ct_id", type text}, {"abstract", type text}, {"acronym", type text}, {"active_years", type text}, {"altmetric", Int64.Type}, {"associated_grant_ids", type text}, {"brief_title", type text}, {"category_bra", type text}, {"category_for", type text}, {"category_hra", type text}, {"category_hrcs_hc", type text}, {"category_hrcs_rac", type text}, {"category_icrp_cso", type text}, {"category_icrp_ct", type text}, {"category_rcdc", type text}, {"conditions", type text}, {"date_inserted", type date}, {"dimensions_url", type text}, {"end_date", type date}, {"funder_countries", type text}, {"funders", type text}, {"gender", type text}, {"interventions", type text}, {"investigators", type text}, {"linkout", type text}, {"mesh_terms", type text}, {"overall_status", type text}, {"phase", type text}, {"publication_ids", type text}, {"registry", type text}, {"research_orgs", type text}, {"researchers", type text}, {"start_date", type date}, {"study_arms", type text}, {"study_designs", type text}, {"study_eligibility_criteria", type text}, {"study_maximum_age", type text}, {"study_minimum_age", type text}, {"study_outcome_measures", type text}, {"study_participants", Int64.Type}, {"study_type", type text}, {"title", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

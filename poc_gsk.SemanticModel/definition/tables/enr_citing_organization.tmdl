@@ -1,0 +1,57 @@
+table enr_citing_organization
+	lineageTag: 515f2bf3-3eef-466e-900a-118d86f8a1fb
+
+	column grid_id
+		dataType: string
+		lineageTag: e836ab69-4887-47b0-b9a8-8d1ec5bab2ec
+		summarizeBy: none
+		sourceColumn: grid_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column org_name
+		dataType: string
+		lineageTag: c3b0f866-2960-40bf-a46c-b3ed476130fa
+		summarizeBy: none
+		sourceColumn: org_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 6ded5107-4d7c-420a-9a20-bc1e120e2999
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_gsk
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1bc74434-bc84-4fd1-8187-073b834c5998
+		summarizeBy: none
+		sourceColumn: is_gsk
+
+		annotation SummarizationSetBy = Automatic
+
+	column enr_loaded_at
+		dataType: string
+		lineageTag: 7b660bd8-8443-4a47-99dc-da6ef013dab4
+		summarizeBy: none
+		sourceColumn: enr_loaded_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enr_citing_organization = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Nishant Dwivedi\Desktop\Downloads\impact_workbook (1).xlsx"), null, true),
+				    enr_citing_organization_Sheet = Source{[Item="enr_citing_organization",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(enr_citing_organization_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"grid_id", type text}, {"org_name", type text}, {"country_name", type text}, {"is_gsk", type logical}, {"enr_loaded_at", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
